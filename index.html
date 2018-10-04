@@ -2,8 +2,10 @@
 <html lang="en"> 
 <head> 
 	<meta charset="UTF-8" />
-    <title>Learning Phaser</title>
+    <title>P2</title>
 	<script type="text/javascript" src="js/phaser.min.js"></script>
+	<script type="text/javascript" src="js/preload.js"></script>
+	<script type="text/javascript" src="js/gameplay.js"></script>
     <style type="text/css">
         body {
             margin: 0;
@@ -14,19 +16,15 @@
 
 <script type="text/javascript">
 
-	let game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { create: create, update: update });
+	let game = new Phaser.Game(800, 600, Phaser.AUTO, 'GameDev p2', { create: create, update: update });
 
 	
 	function create() {
 
-		let style = {
-			font: "64pt Arial",
-	        fill: "#ffffff",
-	        align: "center"
-	    }
-	    let text = game.add.text(game.world.centerX, game.world.centerY, "Hello, world!", style);
+		game.state.add("Preload", preloadState);
+		game.state.add("Game", gameplayState);
+		game.state.start("Preload");
 
-	    text.anchor.setTo(0.5, 0.5);
 
 	}
 
