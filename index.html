@@ -20,22 +20,28 @@
 
 <script type="text/javascript">
 
-	let game = new Phaser.Game(2436,1125, Phaser.AUTO, 'GameDev p2', { create: create, update: update });
+	let game = new Phaser.Game(1732,800, Phaser.AUTO, 'GameDev p2', { create: create, update: update, render: render});
 
-	
+
 	function create() {
 
 		game.state.add("Preload", preloadState);
 		game.state.add("Game", gameplayState);
 		game.state.start("Preload");
-
+        game.load.image("background", "assets/grid.png");
 
 	}
 
 	function update() {
 
+    }
 
-	}
+    function render() {
+
+        game.debug.cameraInfo(game.camera, 32, 32);
+
+    }
+
 
 
 	
