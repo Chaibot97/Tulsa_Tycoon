@@ -8,19 +8,33 @@ let buildings=Array();
 
 let image; 
 let hud;
+let popMenu;
+let map;
 let gameplayState = function(){
 	
 };
 
 gameplayState.prototype.create = function(){
 	
-	let tmpb = new Building(250,250,"star");
-	buildings.push(tmpb);
+	
+	// let tmpb = new Building(250,250,"star");
+	// buildings.push(tmpb);
 	hud=new HUD();
-    game.add.tileSprite(0, 0, 2436, 1125, 'background');
+
+	map=game.add.tileSprite(0, 0, 2436, 1125, 'background');
+	map.events.onInputDown.add(toggleMenu,this);
     game.world.setBounds(0, 0, 2436, 1125);
     game.camera.x = 2436/2;
-    game.camera.y = 1125/2;
+	game.camera.y = 1125/2;
+	for (let i=0; i<=2; i++){
+		for (let j=0; j<=2; j++){
+			let myBuilding = new BuildingSite(1000+(250*i), 400+(250*j));
+			buildings.push(myBuilding);
+		}
+	}
+	popMenu=new PopMenu();
+
+	
     //c= new Clickable(500,500,"star");
 };
 
@@ -36,7 +50,7 @@ gameplayState.prototype.update = function(){
     }
     else {
         this.game.origDragPoint = null;
-    }
+	}
 };
 
 

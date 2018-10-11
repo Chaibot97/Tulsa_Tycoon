@@ -3,5 +3,6 @@ let Building = function(X,Y,type){
     this.y=Y;
     this.type=type;
     this.sprite=game.add.sprite(X, Y, type);
-    this.sprite.scale.setTo(3, 3);
+    this.sprite.inputEnabled = true;
+    // this.sprite.scale.setTo();
 };
