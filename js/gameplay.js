@@ -21,17 +21,21 @@ gameplayState.prototype.create = function(){
 	// buildings.push(tmpb);
 	hud=new HUD();
 
-	map=game.add.tileSprite(0, 0, 2436, 1125, 'background');
+	map=game.add.tileSprite(0, 0,  3654, 2250, 'background');
 	map.events.onInputDown.add(toggleMenu,this);
-    game.world.setBounds(0, 0, 2436, 1125);
-    game.camera.x = 2436/2;
-	game.camera.y = 1125/2;
-	for (let i=0; i<=2; i++){
-		for (let j=0; j<=2; j++){
-			let myBuilding = new BuildingSite(1000+(250*i), 400+(250*j));
-			buildings.push(myBuilding);
-		}
-	}
+    game.world.setBounds(0, 0, 3654, 2250);
+    game.camera.x = 0;
+	game.camera.y = 2250-1125;
+
+	buildings.push(new BuildingSite(435, 925));
+	buildings.push(new BuildingSite(910, 1330));
+	buildings.push(new BuildingSite(1400, 925))
+	// for (let i=0; i<=2; i++){
+	// 	for (let j=0; j<=2; j++){
+	// 		let myBuilding = new BuildingSite(1000+(250*i), 400+(250*j));
+	// 		buildings.push(myBuilding);
+	// 	}
+	// }
 	popMenu=new PopMenu();
 
 	
@@ -46,10 +50,11 @@ gameplayState.prototype.update = function(){
             game.camera.y += this.game.origDragPoint.y - this.game.input.activePointer.position.y;
         }
         // set new drag origin to current position
-        this.game.origDragPoint = this.game.input.activePointer.position.clone();
+		this.game.origDragPoint = this.game.input.activePointer.position.clone();
     }
     else {
-        this.game.origDragPoint = null;
+		this.game.origDragPoint = null;
+		
 	}
 };
 

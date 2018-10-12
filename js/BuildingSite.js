@@ -8,9 +8,11 @@ let BuildingSite = function(X,Y){
 
 
 BuildingSite.prototype.build=function(type){
+    this.building.sprite.kill();
     this.building=new Building(this.x,this.y,type);
     toggleMenu();
 }
+
 function toggleMenu () {
     if(!popMenuUp){
         popMenu.show(this.x,this.y,this);

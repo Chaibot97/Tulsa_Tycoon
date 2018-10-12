@@ -5,6 +5,7 @@
     <title>P2</title>
 	<script type="text/javascript" src="js/phaser.min.js"></script>
 	<script type="text/javascript" src="js/preload.js"></script>
+	<script type="text/javascript" src="js/pregameplay.js"></script>
 	<script type="text/javascript" src="js/gameplay.js"></script>
 	<script type="text/javascript" src="js/Building.js"></script>
 	<script type="text/javascript" src="js/BuildingSite.js"></script>
@@ -23,12 +24,13 @@
 
 <script type="text/javascript">
 
-	let game = new Phaser.Game(1732,800, Phaser.AUTO, 'GameDev p2', { create: create, update: update, render: render});
+	let game = new Phaser.Game( 2436 , 1125, Phaser.AUTO, 'GameDev p2', { create: create, update: update, render: render});
 
 
 	function create() {
 
 		game.state.add("Preload", preloadState);
+		game.state.add("PreGame", pregameplayState);
 		game.state.add("Game", gameplayState);
 		game.state.start("Preload");
         game.load.image("background", "assets/grid.png");
