@@ -1,5 +1,6 @@
 // gameplayState constructor
 let money = 0;
+let score = 0;
 let population=0;
 let time;
 let c;
@@ -37,6 +38,11 @@ gameplayState.prototype.update = function(){
     else {
         this.game.origDragPoint = null;
     }
+    for(let i = 0; i < buildings.length; i++){
+        money += buildings[i].getMoney();
+        score += buildings[i].getScore();
+    }
+    console.log(money);
 };
 
 
