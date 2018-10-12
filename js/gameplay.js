@@ -22,6 +22,11 @@ gameplayState.prototype.create = function(){
     game.camera.x = 2436/2;
     game.camera.y = 1125/2;
     //c= new Clickable(500,500,"star");
+	
+	//Dialogue!!!
+	let myOption = new DialogueRecord(300, 300, "Hello", 3);
+	let choiceA = new DialogueChoice(200, 500, 'hi', 1);
+	let choiceB = new DialogueChoice(400, 500, 'jazz?', 1);
 };
 
 gameplayState.prototype.update = function(){
