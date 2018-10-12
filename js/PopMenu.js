@@ -6,9 +6,9 @@ let PopMenu= function(){
     
 };
 PopMenu.prototype.show=function(x,y,parent){
-    this.houseButton.show(x+200,y);
-	this.hotelButton.show(x+200,y+70);
-    this.oilButton.show(x+200,y+140);
+    this.houseButton.show(x+400,y);
+	this.hotelButton.show(x+400,y+70);
+    this.oilButton.show(x+400,y+140);
     this.parent=parent;
     this.houseButton.addListener(clkHouseButton,this.parent);
     this.hotelButton.addListener(clkHotelButton,this.parent);
