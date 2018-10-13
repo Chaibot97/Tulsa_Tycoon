@@ -9,7 +9,19 @@ let BuildingSite = function(X,Y){
 
 BuildingSite.prototype.build=function(type){
     this.building.sprite.kill();
-    this.building=new Building(this.x,this.y,type);
+    this.building=new Building(this.x,this.y,type,1);
+    if(this.building.upgradable()){
+        this.building.sprite.events.onInputDown.add(toggleUpgMenu, this);
+    }
+    toggleMenu();
+}
+BuildingSite.prototype.upgrade=function(){
+    if(!this.building.upgradable())return;
+    this.building.sprite.kill();
+    this.building=new Building(this.x,this.y,this.building.type,this.building.lv+1);
+    if(this.building.upgradable()){
+        this.building.sprite.events.onInputDown.add(toggleUpgMenu, this);
+    }
     toggleMenu();
 }
 
@@ -17,6 +29,17 @@ function toggleMenu () {
     if(!popMenuUp){
         popMenu.show(this.x,this.y,this);
         map.inputEnabled = true;
+    }else{
+        popMenu.hide();
+        map.inputEnabled = false;
+    }
+    popMenuUp=!popMenuUp;
+}
+function toggleUpgMenu () {
+    if(!popMenuUp){
+        popMenu.upgrade(this.x,this.y,this);
+        map.inputEnabled = true;
+
     }else{
         popMenu.hide();
         map.inputEnabled = false;

@@ -27,18 +27,13 @@ gameplayState.prototype.create = function(){
     game.camera.x = 0;
 	game.camera.y = 2250-1125;
 
-	buildings.push(new BuildingSite(435, 925));
-	buildings.push(new BuildingSite(910, 1330));
-	buildings.push(new BuildingSite(1400, 925))
-	// for (let i=0; i<=2; i++){
-	// 	for (let j=0; j<=2; j++){
-	// 		let myBuilding = new BuildingSite(1000+(250*i), 400+(250*j));
-	// 		buildings.push(myBuilding);
-	// 	}
-	// }
+	let coords= game.cache.getJSON('buildingCoords');
+	for(let i=0;i<coords.length;i++){
+		buildings.push(new BuildingSite(coords[i][0], coords[i][1]));
+	}
+	
 	popMenu=new PopMenu();
 
-	
     //c= new Clickable(500,500,"star");
 };
 
