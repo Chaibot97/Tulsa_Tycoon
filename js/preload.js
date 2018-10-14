@@ -14,12 +14,18 @@ preloadState.prototype.preload = function(){
 	game.load.image("house1", "assets/houseSprite.png");
 	game.load.image("house2", "assets/houseLv2-01.png");
 	game.load.image("house3", "assets/houseLv3-01.png");
+    game.load.image("upgradeHouse2", "assets/house_upgrade_2.png");
+    game.load.image("upgradeHouse3", "assets/house_upgrade_3.png");
 	game.load.image("hotel1", "assets/hotelSprite.png");
 	game.load.image("hotel2", "assets/hotelLv2.png");
 	game.load.image("hotel3", "assets/hotelLv3.png");
+    game.load.image("upgradeHotel2", "assets/hotel_upgrade_2.png");
+    game.load.image("upgradeHotel3", "assets/hotel_upgrade_3.png");
 	game.load.image("oil1", "assets/oilRigLv2-01.png");
 	game.load.image("oil2", "assets/oilRigLv3-01.png");
 	game.load.image("oil3", "assets/oilRigSprite.png");
+	game.load.image("upgradeOil2", "assets/oil_upgrade_2.png");
+    game.load.image("upgradeOil3", "assets/oil_upgrade_3.png");
 	game.load.image("houseButton", "assets/house_button_bordered.png");
 	game.load.image("hotelButton", "assets/hotel_button_bordered.png");
 	game.load.image("oilButton", "assets/oil_button_bordered.png");
