@@ -17,8 +17,8 @@ preloadState.prototype.preload = function(){
 	game.load.image("hotel1", "assets/hotelSprite.png");
 	game.load.image("hotel2", "assets/hotelLv2.png");
 	game.load.image("hotel3", "assets/hotelLv3.png");
-	game.load.image("oil1", "assets/oilRigSprite.png");
-	game.load.image("oil2", "assets/oilRigSprite.png");
+	game.load.image("oil1", "assets/oilRigLv2-01.png");
+	game.load.image("oil2", "assets/oilRigLv3-01.png");
 	game.load.image("oil3", "assets/oilRigSprite.png");
 	game.load.image("houseButton", "assets/houseButton.png");
 	game.load.image("hotelButton", "assets/hotelButton.png");
