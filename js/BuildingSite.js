@@ -37,6 +37,8 @@ function toggleMenu () {
 }
 function toggleUpgMenu () {
     if(!popMenuUp){
+        popMenu.lv = this.building.lv;
+        popMenu.type = this.building.type;
         popMenu.upgrade(this.x,this.y,this);
         map.inputEnabled = true;
 
