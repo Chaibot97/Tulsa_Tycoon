@@ -16,7 +16,7 @@ let Building = function(X,Y,type){
             this.s_inc = 0;
             this.m_inc = 0;
             break;
-        case "oil_rig":
+        case "oil":
             this.setScore(0);
             this.setMoney(0);
             this.s_inc = 0;

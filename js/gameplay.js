@@ -18,8 +18,8 @@ gameplayState.prototype.create = function(){
 	let tmpb = new Building(250,250,"star");
 	buildings.push(tmpb);
 	hud=new HUD();
-    game.add.tileSprite(0, 0, 2436, 1125, 'background');
-    game.world.setBounds(0, 0, 2436, 1125);
+    game.add.tileSprite(0, 0, 3654, 2250, 'background');
+    game.world.setBounds(0, 0, 3654, 2250);
     game.camera.x = 2436/2;
     game.camera.y = 1125/2;
     //c= new Clickable(500,500,"star");

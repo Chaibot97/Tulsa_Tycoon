@@ -21,7 +21,6 @@ gameplayState.prototype.create = function(){
 			buildings.push(myBuilding);
 		}
 	}
-	
 };
 
 gameplayState.prototype.update = function(){
