@@ -5,22 +5,29 @@ let preloadState = function(){
 };
 
 preloadState.prototype.preload = function(){
-	game.load.image("sky", "assets/sky.png");
-	game.load.image("platform", "assets/platform.png");
-	game.load.image("star", "assets/star.png");
+	game.load.json('buildingCoords', 'assets/buildingCoords.json');
+	game.load.image("title", "assets/titleScreen.png");
+	game.load.spritesheet("titlehouse", "assets/titleAnime.png", 427.7, 493,7);
+	game.load.image("startbutton", "assets/start.png");
 	game.load.image("background", "assets/map.png",)
-	game.load.spritesheet("murph", "assets/character.png", 32, 48);
-	game.load.image("empty", "assets/empty.png");
-	game.load.image("house", "assets/house.png");
-	game.load.image("hotel", "assets/hotel.png");
-	game.load.image("oil", "assets/oil.png");
-	game.load.image("houseButton", "assets/houseButton.png");
-	game.load.image("hotelButton", "assets/hotelButton.png");
-	game.load.image("oilButton", "assets/oilButton.png");
+	game.load.image("empty", "assets/empty2.png");
+	game.load.image("house1", "assets/houseSprite.png");
+	game.load.image("house2", "assets/houseLv2-01.png");
+	game.load.image("house3", "assets/houseLv3-01.png");
+	game.load.image("hotel1", "assets/hotelSprite.png");
+	game.load.image("hotel2", "assets/hotelLv2.png");
+	game.load.image("hotel3", "assets/hotelLv3.png");
+	game.load.image("oil1", "assets/oilRigLv2-01.png");
+	game.load.image("oil2", "assets/oilRigLv3-01.png");
+	game.load.image("oil3", "assets/oilRigSprite.png");
+	game.load.image("houseButton", "assets/house_button_bordered.png");
+	game.load.image("hotelButton", "assets/hotel_button_bordered.png");
+	game.load.image("oilButton", "assets/oil_button_bordered.png");
+	game.load.image("upgradeButton", "assets/houseButton.png");
 };
 
 preloadState.prototype.create = function(){
-	game.state.start("Game");
+	game.state.start("PreGame");
 	
 	
 };

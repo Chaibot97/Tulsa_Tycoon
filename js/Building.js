@@ -1,4 +1,4 @@
-let Building = function(X,Y,type){
+let Building = function(X,Y,type,lv=0){
     this.x=X;
     this.y=Y;
     this.type=type;
@@ -8,11 +8,19 @@ let Building = function(X,Y,type){
     this.money = 0;
     this.s_inc = 0;
     this.m_inc = 0;
-    this.level = 1;
+    let name=type;
+    if(lv!=0){
+        name+=lv;
+    }
+    this.sprite=game.add.sprite(X, Y, name);
+    this.sprite.inputEnabled = true;
+    this.lv=lv;
     switch (type) {
         case "hotel":
             this.setScore(0);
             this.setMoney(0);
+            X-=150;
+            Y-=140;
             this.s_inc = 0;
             this.m_inc = 0;
             break;
@@ -55,4 +63,8 @@ Building.prototype.upgrade=function(){
     this.money += this.m_inc;
     this.level++;
     this.sprite = game.add.sprite(this.X, this.Y, this.type+this.level); //ex hotel2, hotel3, etc.
+};
+
+Building.prototype.upgradable=function(){
+    return this.lv>0 && this.lv<3;
 };
