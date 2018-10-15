@@ -27,7 +27,7 @@ let Building = function(X,Y,type,lv=0){
     this.popText = game.add.text(0, 0, '0', {
         font: '48px Arial Black',
         fill: '#fff',
-        strokeThickness: 4
+        strokeThickness: 20
     });
     this.popText.exists = false;
     this.popText.tween = game.add.tween(this.popText)
