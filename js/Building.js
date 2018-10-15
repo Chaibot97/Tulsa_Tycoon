@@ -1,5 +1,8 @@
 let Building = function(X,Y,type,lv=0){
     this.yield=0;
+    this.price=0;
+    this.pop=0;
+    this.rpop=0;
     if(type=="hotel"){
         X-=150;
         Y-=140;

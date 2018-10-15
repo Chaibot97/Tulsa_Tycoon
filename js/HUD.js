@@ -20,7 +20,8 @@ HUD.prototype.updateTime=function(time){
         this.year ++;
     }
 }
-HUD.prototype.updateHud=function(money,population){
+HUD.prototype.updateHud=function(money,population,Tpopulation){
     this.moneyInfo.text='Money: '+String(money);
-    this.PopuInfo.text='Population: '+String(population);
+    this.PopuInfo.text='Population: '+String(population)+"/"+String(Tpopulation);
+    // console.log("updated"+money);
 };

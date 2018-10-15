@@ -24,29 +24,46 @@ PopMenu.prototype.upgrade=function(x,y, parent){
     this.houseButton.hide();
 	this.hotelButton.hide();
     this.oilButton.hide();
+    let price=0;
+    let pop=0;
+    let rpop=0;
     switch(this.type){
         case "house":
             if(this.lv == 1){
                 this.upgradeButton.sprite=game.add.sprite(0,0,"upgradeHouse2");
+                price=700;
+                pop=15;
             }
             else if(this.lv == 2){
                 this.upgradeButton.sprite=game.add.sprite(0,0,"upgradeHouse3");
+                price=900;
+                pop=20;
             }
             break;
         case "hotel":
             if(this.lv == 1){
                 this.upgradeButton.sprite=game.add.sprite(0,0,"upgradeHotel2");
+                price=2000;
+                pop=13;
+
             }
             else if(this.lv == 2){
                 this.upgradeButton.sprite=game.add.sprite(0,0,"upgradeHotel3");
+                price=2500;
+                pop=17;
+
             }
             break;
         case "oil":
             if(this.lv == 1){
                 this.upgradeButton.sprite=game.add.sprite(0,0,"upgradeOil2");
+                price=3000;
+                rpop=80;
             }
             else if(this.lv == 2){
                 this.upgradeButton.sprite=game.add.sprite(0,0,"upgradeOil3");
+                price=4000;
+                rpop=120;
             }
             break;
     }
@@ -54,6 +71,9 @@ PopMenu.prototype.upgrade=function(x,y, parent){
     this.upgradeButton.sprite.anchor.set(0.5);
     this.upgradeButton.show(x+400,y+70);
     this.parent=parent;
+    this.parent.building.price=price;
+    this.parent.building.pop=pop;
+    this.parent.building.rpop=rpop;
     this.upgradeButton.addListener(clkUpgButton, this.parent);
 }
 PopMenu.prototype.hide=function(){
@@ -65,25 +85,30 @@ PopMenu.prototype.hide=function(){
 };
 function clkHouseButton(){
     if(money>=500){
-        this.build("house");
         money-=500;
-        hud.updateHud(money, population);
+        Tpopulation+=10;
+        this.build("house");
     }
 };
 function clkHotelButton(){
     if(money>=1500){
-        this.build("hotel");
         money-=1500;
-        hud.updateHud(money, population);
+        Tpopulation+=10;
+        this.build("hotel");
     } 
 };
 function clkOilButton(){
-    if(money>=2000){
-        this.build("oil");
+    if(money>=2000&&Tpopulation>=population+40){
+        population+=40;
         money-=2000;
-        hud.updateHud(money, population);
+        this.build("oil");
     }
 };
 function clkUpgButton(){
-    this.upgrade();
+    if(money>=this.building.price&&Tpopulation>=population+this.building.rpop){
+        Tpopulation+=this.building.pop;
+        population+=this.building.rpop;
+        money-=this.building.price;
+        this.upgrade();
+    }
 };
