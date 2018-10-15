@@ -52,7 +52,7 @@ gameplayState.prototype.create = function(){
 
 	popMenu=new PopMenu();
 
-	game.time.events.add(Phaser.Timer.SECOND * 7, firstDialogue, this);
+	//game.time.events.add(Phaser.Timer.SECOND * 7, firstDialogue, this);
 };
 
 function firstDialogue(){
@@ -115,7 +115,7 @@ function counteTime(){
 	if (!pause)
 	{
 		time-=10;
-		hud.updateTime(time);
+		hud.updateTime();
 	}
 }
 

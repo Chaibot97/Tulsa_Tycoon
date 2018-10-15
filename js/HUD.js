@@ -12,7 +12,7 @@ let HUD=function() {
     this.PopuInfo.fixedToCamera = true;
     this.timeInfo.fixedToCamera = true;
 };
-HUD.prototype.updateTime=function(time){
+HUD.prototype.updateTime=function(){
     this.timeInfo.text=String(this.months[this.month] + " " + this.year);
     this.month++;
     if(this.month ==12){
@@ -23,5 +23,4 @@ HUD.prototype.updateTime=function(time){
 HUD.prototype.updateHud=function(money,population,Tpopulation){
     this.moneyInfo.text='Money: '+String(money);
     this.PopuInfo.text='Population: '+String(Tpopulation-population)+"/"+String(Tpopulation);
-    // console.log("updated"+money);
 };
