@@ -3,7 +3,6 @@ let DialogueRecord = function(State, mySpeaker){
 	let X;
 	let Y;
 	let myAlign;
-	let numLines;
 	
 	switch(mySpeaker){
 		case 'Brady':
