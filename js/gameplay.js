@@ -60,7 +60,8 @@ gameplayState.prototype.update = function(){
 
 function counteTime(){
     time--;
-    hud.updateTime(time);
+
+    hud.updateTime(300-time);
 }
 
 function sumYields(){
