@@ -37,6 +37,11 @@ function DialogueScene(){
 	//flip some flag to false
 		//it'd be some sort of flag that all the interactable elements have to check before doing anything when they get interacted on
 	
+	//semi-transparency!
+	let semiTransparent = game.add.sprite(500, 500, 'semitransparent');
+	semiTransparent.anchor.set(0.5)
+	semiTransparent.scale.setTo(3000, 3000);
+	
 	//Dialogue!!!
 	dialogueRecords.push(new DialogueRecord('Hello. This is example dialogue', 'NPC'));
 	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));

@@ -10,6 +10,7 @@ preloadState.prototype.preload = function(){
 	game.load.image("star", "assets/star.png");
 	game.load.image("background", "assets/grid.png")
 	game.load.image("bubble", "assets/DialogueBubble.png");
+	game.load.image("semitransparent", "assets/semitransparent.png");
 	game.load.spritesheet("murph", "assets/character.png", 32, 48);
 };
 
