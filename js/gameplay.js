@@ -6,6 +6,11 @@ let c;
 
 let buildings=Array();
 
+//DIALOGUE!!!
+let dialogueRecords = Array();
+let dialogueOptions = Array();
+//YAY!!!
+
 let image; 
 let hud;
 let gameplayState = function(){
@@ -24,9 +29,10 @@ gameplayState.prototype.create = function(){
     //c= new Clickable(500,500,"star");
 	
 	//Dialogue!!!
-	let myOption = new DialogueRecord(300, 300, "Hello", 3);
-	let choiceA = new DialogueChoice(200, 500, 'hi', 1);
-	let choiceB = new DialogueChoice(400, 500, 'jazz?', 1);
+	dialogueRecords.push(new DialogueRecord('Hello. This is example dialogue', 'NPC'));
+	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
+	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+	
 };
 
 gameplayState.prototype.update = function(){
