@@ -40,8 +40,8 @@ gameplayState.prototype.create = function(){
     }
     let timer1=game.time.create(false);
     let timer2=game.time.create(false);
-    timer1.loop(1000, counteTime, this);
-    timer2.loop(2500, sumYields, this);
+    timer1.loop(2500, counteTime, this);
+    timer2.loop(1250, sumYields, this);
     timer1.start();
     timer2.start();
     hud=new HUD();

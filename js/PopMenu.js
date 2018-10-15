@@ -67,18 +67,21 @@ function clkHouseButton(){
     if(money>=500){
         this.build("house");
         money-=500;
+        hud.updateHud(money, population);
     }
 };
 function clkHotelButton(){
     if(money>=1500){
         this.build("hotel");
         money-=1500;
+        hud.updateHud(money, population);
     } 
 };
 function clkOilButton(){
     if(money>=2000){
         this.build("oil");
         money-=2000;
+        hud.updateHud(money, population);
     }
 };
 function clkUpgButton(){
