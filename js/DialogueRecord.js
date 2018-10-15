@@ -8,12 +8,12 @@ let DialogueRecord = function(State, mySpeaker){
 	switch(mySpeaker){
 		case 'Brady':
 			X = 800;
-			Y = 200;
+			Y = 700;
 			myAlign = 'right';
 			break;
 		case 'NPC':
 			X = 400;
-			Y = 200;
+			Y = 700;
 			myAlign = 'left';
 	}
 	
@@ -26,6 +26,7 @@ Dialogue.prototype.constructor = Dialogue;
 
 DialogueRecord.prototype.MoveUp = function(height){
 
-	this.y -= height;
+	this.sprite.y -= height;
+	this.text.y -= height;
 
 }

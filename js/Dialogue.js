@@ -11,7 +11,7 @@ let Dialogue = function(X, Y, State, myAlign){
     this.sprite.anchor.set(0);
 	
 	this.text = game.add.text(X+10, Y, State);
-	this.text.font = 'Arial';
+	this.text.font = 'Attica';	//Bastion?
 	this.text.fill = '#65390D';
 	this.text.fontSize = 32;
 	this.text.wordWrap = true;

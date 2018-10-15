@@ -19,21 +19,30 @@ let gameplayState = function(){
 
 gameplayState.prototype.create = function(){
 	
-	let tmpb = new Building(250,250,"star");
-	buildings.push(tmpb);
-	hud=new HUD();
-    game.add.tileSprite(0, 0, 2436, 1125, 'background');
+	hud = new HUD();
+	
+	game.add.tileSprite(0, 0, 2436, 1125, 'background');
     game.world.setBounds(0, 0, 2436, 1125);
     game.camera.x = 2436/2;
     game.camera.y = 1125/2;
-    //c= new Clickable(500,500,"star");
+	
+	//the dialogue scene starts after 10 seconds
+	game.time.events.add(Phaser.Timer.SECOND * 10, DialogueScene, this);
+	
+};
+
+function DialogueScene(){
+	
+	//ZA WARUDO! TOKI WO TOMARE!
+	//flip some flag to false
+		//it'd be some sort of flag that all the interactable elements have to check before doing anything when they get interacted on
 	
 	//Dialogue!!!
 	dialogueRecords.push(new DialogueRecord('Hello. This is example dialogue', 'NPC'));
 	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
 	dialogueOptions.push(new DialogueChoice('nice', 'right'));
-	
-};
+
+}
 
 gameplayState.prototype.update = function(){
 	hud.updateHud(money,population);
@@ -49,6 +58,3 @@ gameplayState.prototype.update = function(){
         this.game.origDragPoint = null;
     }
 };
-
-
-
