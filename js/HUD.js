@@ -11,7 +11,8 @@ HUD.prototype.updateTime=function(time){
     time=Math.floor(time/10);
     this.timeInfo.text=String(Math.floor(time/60))+":"+String(time%60).padStart(2, '0');
 }
-HUD.prototype.updateHud=function(money,population){
+HUD.prototype.updateHud=function(money,population,Tpopulation){
     this.moneyInfo.text='Money: '+String(money);
-    this.PopuInfo.text='Population: '+String(population);
+    this.PopuInfo.text='Population: '+String(population)+"/"+String(Tpopulation);
+    // console.log("updated"+money);
 };

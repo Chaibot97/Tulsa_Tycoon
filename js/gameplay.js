@@ -1,6 +1,7 @@
 // gameplayState constructor
 let money = 2000;
 let population=0;
+let Tpopulation=0;
 let time=3000;
 let c;
 
@@ -13,6 +14,7 @@ let map;
 let hud;
 let timer1;
 let timer2;
+
 let gameplayState = function(){
 };
 
@@ -37,11 +39,10 @@ gameplayState.prototype.create = function(){
     timer2.start();
     hud=new HUD();
     hud.updateTime(time);
-    hud.updateHud(money,population);
+    hud.updateHud(money,population,Tpopulation);
 
 	popMenu=new PopMenu();
 
-    //c= new Clickable(500,500,"star");
 };
 
 gameplayState.prototype.update = function(){
@@ -63,6 +64,7 @@ gameplayState.prototype.update = function(){
 function counteTime(){
     time-=10;
     hud.updateTime(time);
+    
 }
 
 function sumYields(){
@@ -70,5 +72,6 @@ function sumYields(){
         if(e.building)
             e.building.yieldMoney();
     });
-    hud.updateHud(money,population);
+    hud.updateHud(money,population,Tpopulation);
+    
 }
