@@ -10,6 +10,14 @@ let image;
 //let this.hud;
 let popMenu;
 let map;
+//DIALOGUE!!!
+let dialogueRecords = Array();
+let dialogueOptions = Array();
+
+let semiTransparent;
+//YAY!!!
+
+let image; 
 let hud;
 let timer1;
 let timer2;
@@ -43,6 +51,24 @@ gameplayState.prototype.create = function(){
 
     //c= new Clickable(500,500,"star");
 };
+
+function DialogueScene(){
+	
+	//ZA WARUDO! TOKI WO TOMARE!
+	//flip some flag to false
+		//it'd be some sort of flag that all the interactable elements have to check before doing anything when they get interacted on
+	
+	//semi-transparency!
+	semiTransparent = game.add.sprite(500, 500, 'semitransparent');
+	semiTransparent.anchor.set(0.5)
+	semiTransparent.scale.setTo(3000, 3000);
+	
+	//Dialogue!!!
+	dialogueRecords.push(new DialogueRecord('Hello. This is example dialogue', 'NPC'));
+	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
+	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+
+}
 
 gameplayState.prototype.update = function(){
     
