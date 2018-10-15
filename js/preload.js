@@ -10,7 +10,7 @@ preloadState.prototype.preload = function(){
 	game.load.spritesheet("titlehouse", "assets/titleAnime.png", 427.7, 493,7);
 	game.load.image("startbutton", "assets/start.png");
 	game.load.image("background", "assets/map.png",)
-	game.load.image("empty", "assets/empty2.png");
+	game.load.image("empty", "assets/buildable.png");
 	game.load.image("house1", "assets/houseSprite.png");
 	game.load.image("house2", "assets/houseLv2-01.png");
 	game.load.image("house3", "assets/houseLv3-01.png");

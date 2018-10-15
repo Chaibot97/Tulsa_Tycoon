@@ -1,7 +1,7 @@
 let Building = function(X,Y,type,lv=0){
     this.yield=0;
     if(type=="hotel"){
-        X-=150; 
+        X-=150;
         Y-=140;
         this.yield=50*Math.pow(2,lv-1);
     }else if(type=="oil"){

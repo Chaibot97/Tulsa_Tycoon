@@ -6,7 +6,6 @@ let BuildingSite = function(X,Y){
     this.building.sprite.events.onInputDown.add(toggleMenu, this);
 }
 
-
 BuildingSite.prototype.build=function(type){
     this.building.sprite.kill();
     this.building=new Building(this.x,this.y,type,1);
