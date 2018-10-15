@@ -26,26 +26,27 @@ PopMenu.prototype.upgrade=function(x,y, parent){
     this.oilButton.hide();
     switch(this.type){
         case "house":
-            if(this.lv = 1){
+            if(this.lv == 1){
                 this.upgradeButton.sprite=game.add.sprite(0,0,"upgradeHouse2");
             }
-            else if(this.lv = 2){
+            else if(this.lv == 2){
+                console.log("level two to 3");
                 this.upgradeButton.sprite=game.add.sprite(0,0,"upgradeHouse3");
             }
             break;
         case "hotel":
-            if(this.lv = 1){
+            if(this.lv == 1){
                 this.upgradeButton.sprite=game.add.sprite(0,0,"upgradeHotel2");
             }
-            else if(this.lv = 2){
+            else if(this.lv == 2){
                 this.upgradeButton.sprite=game.add.sprite(0,0,"upgradeHotel3");
             }
             break;
         case "oil":
-            if(this.lv = 1){
+            if(this.lv == 1){
                 this.upgradeButton.sprite=game.add.sprite(0,0,"upgradeOil2");
             }
-            else if(this.lv = 2){
+            else if(this.lv == 2){
                 this.upgradeButton.sprite=game.add.sprite(0,0,"upgradeOil3");
             }
             break;
@@ -73,5 +74,5 @@ function clkOilButton(){
     this.build("oil");
 };
 function clkUpgButton(){
-    this.upgrade(this.type, this.lv);
+    this.upgrade();
 };
