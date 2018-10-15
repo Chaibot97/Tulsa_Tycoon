@@ -30,7 +30,6 @@ PopMenu.prototype.upgrade=function(x,y, parent){
                 this.upgradeButton.sprite=game.add.sprite(0,0,"upgradeHouse2");
             }
             else if(this.lv == 2){
-                console.log("level two to 3");
                 this.upgradeButton.sprite=game.add.sprite(0,0,"upgradeHouse3");
             }
             break;

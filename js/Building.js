@@ -17,4 +17,4 @@ let Building = function(X,Y,type,lv=0){
 };
 Building.prototype.upgradable=function(){
     return this.lv>0 && this.lv<3;
-}
+};
