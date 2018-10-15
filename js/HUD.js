@@ -8,6 +8,7 @@ let HUD=function() {
     this.timeInfo.fixedToCamera = true;
 };
 HUD.prototype.updateTime=function(time){
+    time=Math.floor(time/10);
     this.timeInfo.text=String(Math.floor(time/60))+":"+String(time%60).padStart(2, '0');
 }
 HUD.prototype.updateHud=function(money,population){

@@ -64,13 +64,22 @@ PopMenu.prototype.hide=function(){
     this.upgradeButton.hide();
 };
 function clkHouseButton(){
-    this.build("house");
+    if(money>=500){
+        this.build("house");
+        money-=500;
+    }
 };
 function clkHotelButton(){
-    this.build("hotel");
+    if(money>=1500){
+        this.build("hotel");
+        money-=1500;
+    } 
 };
 function clkOilButton(){
-    this.build("oil");
+    if(money>=2000){
+        this.build("oil");
+        money-=2000;
+    }
 };
 function clkUpgButton(){
     this.upgrade();

@@ -1,7 +1,7 @@
 // gameplayState constructor
-let money = 0;
+let money = 2000;
 let population=0;
-let time=300;
+let time=3000;
 let c;
 
 let buildings=Array();
@@ -37,6 +37,8 @@ gameplayState.prototype.create = function(){
     timer2.start();
     hud=new HUD();
     hud.updateTime(time);
+    hud.updateHud(money,population);
+
 	popMenu=new PopMenu();
 
     //c= new Clickable(500,500,"star");
@@ -59,7 +61,7 @@ gameplayState.prototype.update = function(){
 };
 
 function counteTime(){
-    time--;
+    time-=10;
     hud.updateTime(time);
 }
 
