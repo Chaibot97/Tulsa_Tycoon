@@ -5,7 +5,9 @@ let HUD=function() {
     this.months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     this.moneyInfo = game.add.text(2000, 15, 'Money: 0', { font: "48px Arial", fill: '#ffffff' });
     this.PopuInfo = game.add.text(2000, 65, 'Population: 0', { font: "48px Arial", fill: '#ffffff' });
-    this.timeInfo = game.add.text(1100, 15, '0', { font: "96px Arial", fill: '#ffffff' });
+    this.timeInfo = game.add.text(1000, 15, '0', { font: "96px Baskerville", fill: '#ffffff', strokeThickness: 9, boundsAlignH: "right", boundsAlignV: 'middle' }
+    );
+    this.timeInfo.setShadow(3, 3, 'rgba(0,0,0,0.5)', 16);
     this.moneyInfo.fixedToCamera = true;
     this.PopuInfo.fixedToCamera = true;
     this.timeInfo.fixedToCamera = true;

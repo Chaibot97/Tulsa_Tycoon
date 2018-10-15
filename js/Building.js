@@ -22,7 +22,7 @@ let Building = function(X,Y,type,lv=0){
     this.lv=lv;
     
     this.popText = game.add.text(0, 0, '0', {
-        font: '48px Arial Black',
+        font: '64px Baskerville',
         fill: '#fff',
         strokeThickness: 20
     });
