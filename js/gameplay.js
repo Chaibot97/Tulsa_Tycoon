@@ -2,6 +2,7 @@
 let money = 2000;
 let population=0;
 let time=3000;
+let pause = false;
 let c;
 
 let buildings=Array();
@@ -10,6 +11,7 @@ let image;
 //let this.hud;
 let popMenu;
 let map;
+
 //DIALOGUE!!!
 let dialogueRecords = Array();
 let dialogueOptions = Array();
@@ -17,7 +19,6 @@ let dialogueOptions = Array();
 let semiTransparent;
 //YAY!!!
 
-let image; 
 let hud;
 let timer1;
 let timer2;
@@ -50,13 +51,17 @@ gameplayState.prototype.create = function(){
 	popMenu=new PopMenu();
 
     //c= new Clickable(500,500,"star");
+	
+	game.time.events.add(Phaser.Timer.SECOND * 7, firstDialogue, this);
 };
 
-function DialogueScene(){
+function firstDialogue(){
 	
 	//ZA WARUDO! TOKI WO TOMARE!
-	//flip some flag to false
-		//it'd be some sort of flag that all the interactable elements have to check before doing anything when they get interacted on
+	pause = true;
+	
+	//stop the buildings from interacting
+	stopInteracting();
 	
 	//semi-transparency!
 	semiTransparent = game.add.sprite(500, 500, 'semitransparent');
@@ -64,7 +69,27 @@ function DialogueScene(){
 	semiTransparent.scale.setTo(3000, 3000);
 	
 	//Dialogue!!!
-	dialogueRecords.push(new DialogueRecord('Hello. This is example dialogue', 'NPC'));
+	dialogueRecords.push(new DialogueRecord('Hello. This is the first example dialogue', 'NPC'));
+	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
+	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+
+}
+
+function secondDialogue(){
+	
+	//ZA WARUDO! TOKI WO TOMARE!
+	pause = true;
+	
+	//stop the buildings from interacting
+	stopInteracting();
+	
+	//semi-transparency!
+	semiTransparent = game.add.sprite(500, 500, 'semitransparent');
+	semiTransparent.anchor.set(0.5)
+	semiTransparent.scale.setTo(3000, 3000);
+	
+	//Dialogue!!!
+	dialogueRecords.push(new DialogueRecord('Hello. This is the second example dialogue', 'NPC'));
 	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
 	dialogueOptions.push(new DialogueChoice('nice', 'right'));
 
@@ -87,8 +112,11 @@ gameplayState.prototype.update = function(){
 };
 
 function counteTime(){
-    time-=10;
-    hud.updateTime(time);
+	if (!pause)
+	{
+		time-=10;
+		hud.updateTime(time);
+	}
 }
 
 function sumYields(){
@@ -97,4 +125,17 @@ function sumYields(){
             e.building.yieldMoney();
     });
     hud.updateHud(money,population);
+}
+
+function stopInteracting(){
+	buildings.forEach(function(e) {
+        if(e.building)
+            e.building.inputEnabled = false;
+    })
+}
+function continueInteracting(){
+	buildings.forEach(function(e) {
+        if(e.building)
+            e.building.inputEnabled = true;
+    })
 }

@@ -1,4 +1,4 @@
-let DialogueDone = function(){
+let DialogueDone = function(nextScene){
 	
 	let X = 500;
 	let Y = 1000;
@@ -26,7 +26,13 @@ let DialogueDone = function(){
 		
 		}
 		
-		game.time.events.add(Phaser.Timer.SECOND * 10, DialogueScene, this);
+		switch(nextScene){
+			case 'secondDialogue':
+				game.time.events.add(Phaser.Timer.SECOND * 7, secondDialogue, this);
+		}
+		
+		pause = false;
+		continueInteracting();
 		
 		this.sprite.destroy();
 		this.text.destroy();

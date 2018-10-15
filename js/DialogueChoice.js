@@ -82,49 +82,49 @@ let DialogueChoice = function(State, myPosition){
 				dialogueRecords.push(new DialogueRecord('no', 'Brady'));
 				for (let i=0; i<dialogueRecords.length; i++){dialogueRecords[i].MoveUp(128);}
 				dialogueRecords.push(new DialogueRecord('aight bye', 'NPC'));
-				new DialogueDone();
+				new DialogueDone('secondDialogue');
 				break;
 			case 'fine':
 				dialogueRecords.push(new DialogueRecord('fine', 'Brady'));
 				for (let i=0; i<dialogueRecords.length; i++){dialogueRecords[i].MoveUp(128);}
 				dialogueRecords.push(new DialogueRecord('cool thx', 'NPC'));
-				new DialogueDone();
+				new DialogueDone('secondDialogue');
 				break;
 			case 'Lorem ipsum':
 				dialogueRecords.push(new DialogueRecord('Lorem ipsum', 'Brady'));
 				for (let i=0; i<dialogueRecords.length; i++){dialogueRecords[i].MoveUp(128);}
 				dialogueRecords.push(new DialogueRecord('stop', 'NPC'));
-				new DialogueDone();
+				new DialogueDone('secondDialogue');
 				break;
 			case 'because memes are fun also i have to test my lineNumber function':
 				dialogueRecords.push(new DialogueRecord('because memes are fun also i have to test my lineNumber function', 'Brady'));
 				for (let i=0; i<dialogueRecords.length; i++){dialogueRecords[i].MoveUp(128);}
 				dialogueRecords.push(new DialogueRecord('understandable', 'NPC'));
-				new DialogueDone();
+				new DialogueDone('secondDialogue');
 				break;
 			case 'cool':
 				dialogueRecords.push(new DialogueRecord('cool', 'Brady'));
 				for (let i=0; i<dialogueRecords.length; i++){dialogueRecords[i].MoveUp(128);}
 				dialogueRecords.push(new DialogueRecord('dank', 'NPC'));
-				new DialogueDone();
+				new DialogueDone('secondDialogue');
 				break;
 			case 'hows the fam':
 				dialogueRecords.push(new DialogueRecord('hows the fam', 'Brady'));
 				for (let i=0; i<dialogueRecords.length; i++){dialogueRecords[i].MoveUp(128);}
 				dialogueRecords.push(new DialogueRecord('I dont have one. Im not real.', 'NPC'));
-				new DialogueDone();
+				new DialogueDone('secondDialogue');
 				break;
 			case 'yeet':
 				dialogueRecords.push(new DialogueRecord('yeet', 'Brady'));
 				for (let i=0; i<dialogueRecords.length; i++){dialogueRecords[i].MoveUp(128);}
 				dialogueRecords.push(new DialogueRecord('yoot', 'NPC'));
-				new DialogueDone();
+				new DialogueDone('secondDialogue');
 				break;
 			case 'y3333333t':
 				dialogueRecords.push(new DialogueRecord('y3333333t', 'Brady'));
 				for (let i=0; i<dialogueRecords.length; i++){dialogueRecords[i].MoveUp(128);}
 				dialogueRecords.push(new DialogueRecord('y0000000t', 'NPC'));
-				new DialogueDone();
+				new DialogueDone('secondDialogue');
 		}
 
 	}
