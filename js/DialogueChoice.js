@@ -427,9 +427,9 @@ let DialogueChoice = function(State, myPosition){
 						} else {
 								dialogueEffect = new Effect('....yikes. Your city\'s only worth ' + netWorth + ' BradyBucks.\nYou...uh... you could use some work.');
 						}						
-						new DialogueDone();
-						BGM.stop()
-						game.state.start("preGame");
+						//new DialogueDone();
+						//BGM.stop()
+						//game.state.start("preGame");
 						break;
 					case 'I made a lot of money and would like to receive praise for it now.':
 						bigDialogue = new DialogueBig('Slow down there, buckaroo. Lemme tally up your total.');
@@ -440,9 +440,9 @@ let DialogueChoice = function(State, myPosition){
 						} else {
 								dialogueEffect = new Effect('....yikes. Your city\'s only worth ' + netWorth + ' BradyBucks.\nYou...uh... you could use some work.');
 						}
-						new DialogueDone();
-						BGM.stop()
-						game.state.start("preGame");
+						//new DialogueDone();
+						//BGM.stop()
+						//game.state.start("preGame");
 						
 				}
 			
