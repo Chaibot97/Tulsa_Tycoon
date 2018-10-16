@@ -19,9 +19,9 @@ let PopMenu= function(){
 PopMenu.prototype.show=function(x,y,parent){
     this.x=x;
     this.y=y;
-    this.houseButton.show(x+400,y);
-	this.hotelButton.show(x+400,y+70);
-    this.oilButton.show(x+400,y+140);
+    this.houseButton.show(x+400,y-85);
+	this.hotelButton.show(x+400,y+50);
+    this.oilButton.show(x+400,y+185);
     this.upgradeButton.hide();
     this.parent=parent;
     this.houseButton.addListener(clkHouseButton,this.parent);
