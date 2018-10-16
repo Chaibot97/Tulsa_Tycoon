@@ -25,12 +25,21 @@ let npc;
 let hud;
 let timer1;
 let timer2;
+let clickFX;
+let alertFX;
+let buildingFX;
+let lvUp1FX;
+let lvUp2FX;
+let dialogueFX;
+let dialogueGoodFX;
+let dialogueBadFX;
+let BGM;
 let gameplayState = function(){
 };
 
 gameplayState.prototype.create = function(){
 	map=game.add.tileSprite(0, 0,  3654, 2250, 'background');
-	map.events.onInputDown.add(toggleMenu,this);
+	map.events.onInputDown.add(closeMenu,this);
     game.world.setBounds(0, 0, 3654, 2250);
     game.camera.x = 0;
 	game.camera.y = 2250-1125;
@@ -48,14 +57,26 @@ gameplayState.prototype.create = function(){
     timer1.start();
     timer2.start();
     hud=new HUD();
-    hud.updateTime(time);
+    hud.updateTime();
     hud.updateHud(money,population,Tpopulation);
 
 	popMenu=new PopMenu();
+    clickFX=game.add.audio('click_audio');
+    alertFX=game.add.audio('alert_audio');
+    buildingFX=game.add.audio('building_audio');
+    lvUp1FX=game.add.audio('levelup1_audio');
+    lvUp2FX=game.add.audio('levelup2_audio');
 
-    //c= new Clickable(500,500,"star");
 	
 	firstDialogue();
+    dialogueFX=game.add.audio('dialogue_audio')
+    dialogueBadFX=game.add.audio('dialogue_bad_audio')
+    dialogueGoodFX=game.add.audio('dialogue_good_audio')
+
+    BGM=game.add.audio("main_audio")
+    BGM.loop=true;
+    BGM.play();
+	//game.time.events.add(Phaser.Timer.SECOND * 7, firstDialogue, this);
 };
 
 gameplayState.prototype.update = function(){

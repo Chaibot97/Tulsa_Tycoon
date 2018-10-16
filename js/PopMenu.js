@@ -145,6 +145,7 @@ function clkUpgButton(){
 };
 
 PopMenu.prototype.popUpText=function(t){
+    alertFX.play();
     game.world.bringToTop(this.popText);
     this.popText.text = t;
     this.popText.tween = game.add.tween(this.popText).to({
@@ -155,5 +156,22 @@ PopMenu.prototype.popUpText=function(t){
     this.popText.reset(game.camera.x+1000, game.camera.y+400);
     this.popText.alpha = 1;
     this.popText.tween.start();
+
+    let popText = game.add.text(0, 0, '0', {
+        font: '55px Arial Black',
+        fill: '#fff',
+        strokeThickness: 20
+    });
+    game.world.bringToTop(popText);
+    popText.text = t;
+    popText.tween = game.add.tween(popText).to({
+        alpha: 0,
+        y: game.camera.y+300,
+        x: game.camera.x+1000
+    }, 2500, Phaser.Easing.Cubic.Out);
+    popText.reset(game.camera.x+1000, game.camera.y+400);
+    popText.alpha = 1;
+    popText.tween.start();
+
     
 };

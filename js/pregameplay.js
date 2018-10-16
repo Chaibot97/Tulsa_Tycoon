@@ -2,7 +2,7 @@
 let pregameplayState = function(){
 	
 };
-
+let preBGM;
 pregameplayState.prototype.create = function(){
 	let title=game.add.sprite(0,0,"title");
 	title.width=2436;
@@ -14,12 +14,18 @@ pregameplayState.prototype.create = function(){
 	let startbutton = game.add.button(1670, 780, 'startbutton', play, this);
 	startbutton.width=500;
 	startbutton.height=180;
+	preBGM=game.add.audio("pre_audio");
+	preBGM.loop=true;
+	preBGM.play();
+
+	
 	
 };
 
 function play () {
-
-    game.state.start("Game");
+	game.state.start("Game");
+	game.add.audio('start_audio').play();
+	preBGM.stop();
 
 }
 
