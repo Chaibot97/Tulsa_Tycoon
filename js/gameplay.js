@@ -17,9 +17,16 @@ let map;
 let dialogueOptions = Array();
 
 let bigDialogue;
+let dialogueEffect;
 
 let semiTransparent;
 let npc;
+
+let helpedWorker;
+let helpedFarmer;
+let oilValue = 50;
+
+let currentDialogue = 0;
 //YAY!!!
 
 let hud;
@@ -67,8 +74,8 @@ gameplayState.prototype.create = function(){
     lvUp1FX=game.add.audio('levelup1_audio');
     lvUp2FX=game.add.audio('levelup2_audio');
 
-	
 	firstDialogue();
+	
     dialogueFX=game.add.audio('dialogue_audio')
     dialogueBadFX=game.add.audio('dialogue_bad_audio')
     dialogueGoodFX=game.add.audio('dialogue_good_audio')
@@ -76,7 +83,6 @@ gameplayState.prototype.create = function(){
     BGM=game.add.audio("main_audio")
     BGM.loop=true;
     BGM.play();
-	//game.time.events.add(Phaser.Timer.SECOND * 7, firstDialogue, this);
 };
 
 gameplayState.prototype.update = function(){
@@ -142,109 +148,152 @@ function loadDialogue(year){
 			sixthDialogue();
 			break;
 		case 1904:
-			seventhDialogue();
+			if (!helpedWorker) {seventhDialogue();}
+			else {eigthDialogue();}
 			break;
 		case 1905:
-			eigthDialogue();
+			if (helpedFarmer) {ninthDialogue();}
+			else {tenthDialogue();}
 			break;
 		case 1906:
-			ninthDialogue();
+			eleventhDialogue();
 			break;
 		case 1906:
-			tenthDialogue();
+			twelfthDialogue();
 			break;
 		case 1907:
-			eleventhDialogue();
+			thirteenthDialogue();
 	}
 }
 function firstDialogue(){
 	//prepare the dialogue!
 	prepareDialogue('richMan');
 	
+	currentDialogue = 1;
+	
 	//Dialogue!!!
-	bigDialogue = new DialogueBig('Hello. This is the first example dialogue and oh man oh geez its arbitrarily large eyyyyyyy words words words');
-	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
-	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+	bigDialogue = new DialogueBig('Ah, so you’re the young man helping to build this here settlement! Brady, wasn’t it?');
+	dialogueOptions.push(new DialogueChoice('Yes, sir, that\'s me. (truth)', 'left'));
+	dialogueOptions.push(new DialogueChoice('No, you must have me confused with somebody else. (lie)', 'right'));
 }
 function secondDialogue(){
-	prepareDialogue('bellhop');
+	prepareDialogue('farmer');
+	
+	currentDialogue = 2;
 	
 	//Dialogue!!!
-	bigDialogue = new DialogueBig('Hello. This is the second example dialogue', 'NPC');
-	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
-	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+	bigDialogue = new DialogueBig('Excuse me, sir! Are you Mr. Brady?', 'NPC');
+	dialogueOptions.push(new DialogueChoice('Sure am!', 'left'));
+	dialogueOptions.push(new DialogueChoice('Yep, that\'s me!', 'right'));
 }
 function thirdDialogue(){
-	prepareDialogue('bellhop');
+	prepareDialogue('oilWorker');
+	
+	currentDialogue = 3;
 	
 	//Dialogue!!!
-	bigDialogue = new DialogueBig('Hello. This is the second example dialogue', 'NPC');
-	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
-	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+	bigDialogue = new DialogueBig('WORKERS\' RIGHTS! WORKERS\' RIGHTS! WORKERS\' - Oh! Mr. Brady! Boy, have you come at the right time!', 'NPC');
+	dialogueOptions.push(new DialogueChoice('What\'s the meaning of all this ruckus?!', 'left'));
+	dialogueOptions.push(new DialogueChoice('Is that so?', 'right'));
 }
 function fourthDialogue(){
 	prepareDialogue('bellhop');
 	
+	currentDialogue = 4;
+	
 	//Dialogue!!!
-	bigDialogue = new DialogueBig('Hello. This is the second example dialogue', 'NPC');
-	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
-	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+	bigDialogue = new DialogueBig('Excuse me sir, do you need assistance with anything?', 'NPC');
+	dialogueOptions.push(new DialogueChoice('Just looking around. I\'m the landlord of this place.', 'left'));
+	dialogueOptions.push(new DialogueChoice('I think I\'m fine. This is my hotel, ya know.', 'right'));
 }
 function fifthDialogue(){
-	prepareDialogue('bellhop');
+	prepareDialogue('kkkMan');
+	
+	currentDialogue = 5;
 	
 	//Dialogue!!!
-	bigDialogue = new DialogueBig('Hello. This is the second example dialogue', 'NPC');
-	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
-	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+	bigDialogue = new DialogueBig('Howdy, Mr. Brady! Got a moment to sit and chat?', 'NPC');
+	dialogueOptions.push(new DialogueChoice('I\'m a little busy . . .', 'left'));
+	dialogueOptions.push(new DialogueChoice('Yeah, I can spare some time.', 'right'));
 }
 function sixthDialogue(){
-	prepareDialogue('bellhop');
+	prepareDialogue('police');
+	
+	currentDialogue = 6;
 	
 	//Dialogue!!!
-	bigDialogue = new DialogueBig('Hello. This is the second example dialogue', 'NPC');
-	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
-	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+	bigDialogue = new DialogueBig('Wyatt Brady?  We\'re looking for a Mr. Wyatt T. Brady?', 'NPC');
+	dialogueOptions.push(new DialogueChoice('Speaking.', 'left'));
+	dialogueOptions.push(new DialogueChoice('W. Tate, if you don\'t mind. How can I help you today?', 'right'));
 }
 function seventhDialogue(){
-	prepareDialogue('bellhop');
+	prepareDialogue('oilWorker');
+	
+	currentDialogue = 7;
 	
 	//Dialogue!!!
-	bigDialogue = new DialogueBig('Hello. This is the second example dialogue', 'NPC');
-	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
-	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+	bigDialogue = new DialogueBig('You...Brady? What the hell are you thinking, showing your face around here? No hood to hide behind this time, huh, bastard? So, you\'re everybody\'s friend in public, but we ask you for one favor and all of a sudden it\'s your right to do that shit to us? I just thank God for my daughter\'s sake that I wasn\'t around on the day of the sentencing, if that\'s what you think it deserves to be called. You\'re a monster . . . stay away from me and my family.', 'NPC');
+	new DialogueDone();
 }
 function eigthDialogue(){
-	prepareDialogue('bellhop');
+	prepareDialogue('oilWorker');
+	
+	currentDialogue = 8;
 	
 	//Dialogue!!!
-	bigDialogue = new DialogueBig('Hello. This is the second example dialogue', 'NPC');
-	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
-	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+	bigDialogue = new DialogueBig('You . . . Brady? Is that really you? Oh, a miracle to see a friendly face nowadays. Seems they\'re getting fewer and farther between by the minute. I\'m sure you must\'ve heard what happened to my buddies from the rig… I just can\'t believe somebody would be sick enough to do something like that, you know? Of course you do. In any case, I\'m just glad I wasn\'t there.', 'NPC');
+	dialogueOptions.push(new DialogueChoice('Why weren\'t you?', 'left'));
+	dialogueOptions.push(new DialogueChoice('How\'s the rig?', 'right'));
 }
 function ninthDialogue(){
-	prepareDialogue('bellhop');
+	prepareDialogue('farmer');
+	
+	currentDialogue = 9;
 	
 	//Dialogue!!!
-	bigDialogue = new DialogueBig('Hello. This is the second example dialogue', 'NPC');
-	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
-	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+	bigDialogue = new DialogueBig('Brady! Good to see ya, lad! Remember me?', 'NPC');
+	dialogueOptions.push(new DialogueChoice('Uh, sure?', 'left'));
+	dialogueOptions.push(new DialogueChoice('I\'m terrible with faces. And names. People in general, really.', 'right'));
 }
 function tenthDialogue(){
-	prepareDialogue('bellhop');
+	prepareDialogue('farmer');
+	
+	currentDialogue = 10;
 	
 	//Dialogue!!!
-	bigDialogue = new DialogueBig('Hello. This is the second example dialogue', 'NPC');
-	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
-	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+	bigDialogue = new DialogueBig('Well, I\'ll be damned! Brady!', 'NPC');
+	dialogueOptions.push(new DialogueChoice('Have we met?', 'left'));
+	dialogueOptions.push(new DialogueChoice('Yes . . . and you are?', 'right'));
 }
 function eleventhDialogue(){
-	prepareDialogue('bellhop');
+	prepareDialogue('police');
+	
+	currentDialogue = 11;
 	
 	//Dialogue!!!
-	bigDialogue = new DialogueBig('Hello. This is the second example dialogue', 'NPC');
-	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
-	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+	bigDialogue = new DialogueBig('Brady! Good to see ya!', 'NPC');
+	dialogueOptions.push(new DialogueChoice('Well, if it isn’t old officer Tar-n-Feathers!', 'left'));
+	dialogueOptions.push(new DialogueChoice('I hope I can say the same, depending on why you’re here . . .', 'right'));
+}
+function twelfthDialogue(){
+	prepareDialogue('kkkMan');
+	
+	currentDialogue = 12;
+	
+	//Dialogue!!!
+	bigDialogue = new DialogueBig('Well, if it isn\'t Brady! I\'m always happy to talk to another true white American!', 'NPC');
+	dialogueOptions.push(new DialogueChoice('Yessir. What can I do for you?', 'left'));
+	dialogueOptions.push(new DialogueChoice('In a manner of speaking. What do you want?', 'right'));
+}
+function thirteenthDialogue(){
+	prepareDialogue('richMan');
+	
+	currentDialogue = 13;
+	
+	//Dialogue!!!
+	bigDialogue = new DialogueBig('. . . . . . . wow. You, uh, you sure do get around, don\'t ya, partner?', 'NPC');
+	dialogueOptions.push(new DialogueChoice('This place is the worst and I want to go home.', 'left'));
+	dialogueOptions.push(new DialogueChoice('I made a lot of money and would like to receive praise for it now.', 'right'));
 }
 function prepareDialogue(character){
 	//ZA WARUDO! TOKI WO TOMARE!

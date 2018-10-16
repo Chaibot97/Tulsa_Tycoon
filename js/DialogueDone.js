@@ -25,6 +25,8 @@ let DialogueDone = function(){
 		bigDialogue.sprite.kill();
 		bigDialogue.text.kill();
 		
+		if (dialogueEffect) {dialogueEffect.text.kill();}
+		
 		pause = false;
 		continueInteracting();
 		
