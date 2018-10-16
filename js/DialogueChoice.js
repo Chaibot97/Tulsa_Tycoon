@@ -60,6 +60,8 @@ let DialogueChoice = function(State, myPosition){
 					case 'No, really, that\'s someone else (quit game)':
 						bigDialogue = new DialogueBig('Oh. Well, that’s a shame. If you come across him, send him my way. Good luck, traveler.');
 						new DialogueDone();
+						BGM.stop()
+						game.state.start("preGame");
 						break;
 				}
 			
@@ -418,13 +420,30 @@ let DialogueChoice = function(State, myPosition){
 				switch(this.state){
 					case 'This place is the worst and I want to go home.':
 						bigDialogue = new DialogueBig('Ain\'t this place your home now? Anyway, let\'s see what kinda profit you done did brought in.');
-						dialogueEffect = new Effect('You have ' + money + 'BradyBucks!!!\nBuy yourself something nice!');
+						if(netWorth > 100000){
+							dialogueEffect = new Effect('Well, color me impressed! You managed to build a city worth ' + netWorth + ' BradyBucks!!!\nYou\'re giving me a run for my money, so you\'d best watch your back!');
+						} else if (netWorth <= 100000 && netWorth >= 50000){
+							dialogueEffect = new Effect('Not half bad! You managed to build a city worth ' + netWorth + ' BradyBucks!\nYou\'ve got some growing to do before you\'re good as me, but well done!');
+						} else {
+								dialogueEffect = new Effect('....yikes. Your city\'s only worth ' + netWorth + ' BradyBucks.\nYou...uh... you could use some work.');
+						}						
 						new DialogueDone();
+						BGM.stop()
+						game.state.start("preGame");
 						break;
 					case 'I made a lot of money and would like to receive praise for it now.':
 						bigDialogue = new DialogueBig('Slow down there, buckaroo. Lemme tally up your total.');
-						dialogueEffect = new Effect('You have ' + money + 'BradyBucks!!!\nBuy yourself something nice!');
+						if(netWorth > 100000){
+							dialogueEffect = new Effect('Well, color me impressed! You managed to build a city worth ' + netWorth + ' BradyBucks!!!\nYou\'re giving me a run for my money, so you\'d best watch your back!');
+						} else if (netWorth <= 100000 && netWorth >= 50000){
+							dialogueEffect = new Effect('Not half bad! You managed to build a city worth ' + netWorth + ' BradyBucks!\nYou\'ve got some growing to do before you\'re good as me, but well done!');
+						} else {
+								dialogueEffect = new Effect('....yikes. Your city\'s only worth ' + netWorth + ' BradyBucks.\nYou...uh... you could use some work.');
+						}
 						new DialogueDone();
+						BGM.stop()
+						game.state.start("preGame");
+						
 				}
 			
 		}
