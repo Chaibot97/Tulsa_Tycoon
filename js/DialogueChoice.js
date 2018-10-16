@@ -413,10 +413,12 @@ let DialogueChoice = function(State, myPosition){
 				switch(this.state){
 					case 'This place is the worst and I want to go home.':
 						bigDialogue = new DialogueBig('Ain\'t this place your home now? Anyway, let\'s see what kinda profit you done did brought in.');
+						dialogueEffect = new Effect('You have ' + money + 'BradyBucks!!!\nBuy yourself something nice!');
 						new DialogueDone();
 						break;
 					case 'I made a lot of money and would like to receive praise for it now.':
 						bigDialogue = new DialogueBig('Slow down there, buckaroo. Lemme tally up your total.');
+						dialogueEffect = new Effect('You have ' + money + 'BradyBucks!!!\nBuy yourself something nice!');
 						new DialogueDone();
 				}
 			
