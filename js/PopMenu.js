@@ -70,12 +70,12 @@ PopMenu.prototype.upgrade=function(x,y, parent){
             if(this.lv == 1){
                 this.upgradeButton.sprite=game.add.sprite(0,0,"upgradeOil2");
                 price=3000;
-                rpop=80;
+                rpop=40;
             }
             else if(this.lv == 2){
                 this.upgradeButton.sprite=game.add.sprite(0,0,"upgradeOil3");
                 price=4000;
-                rpop=120;
+                rpop=60;
             }
             break;
     }
