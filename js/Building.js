@@ -3,9 +3,9 @@ let Building = function(X,Y,type,lv=0){
     if(type=="hotel"){
         X-=150;
         Y-=140;
-        this.yield=50*Math.pow(2,lv-1);
+        this.yield=oilValue*Math.pow(2,lv-1);
     }else if(type=="oil"){
-        this.yield=50*Math.pow(2,lv-1);
+        this.yield=oilValue*Math.pow(2,lv-1);
     }else if(type=="house"){
         this.yield=5+lv*5;
 
