@@ -6,9 +6,19 @@ let PopMenu= function(){
     this.upgradeButton= new Button("upgradeButton");
     this.lv = 0;
     this.type = 0;
+    this.x=0;
+    this.y=0;
+    this.popText = game.add.text(0, 0, '0', {
+        font: '55px Arial Black',
+        fill: '#fff',
+        strokeThickness: 20
+    });
+    this.popText.exists = false;
     
 };
 PopMenu.prototype.show=function(x,y,parent){
+    this.x=x;
+    this.y=y;
     this.houseButton.show(x+400,y);
 	this.hotelButton.show(x+400,y+70);
     this.oilButton.show(x+400,y+140);
@@ -21,6 +31,8 @@ PopMenu.prototype.show=function(x,y,parent){
 };
 
 PopMenu.prototype.upgrade=function(x,y, parent){
+    this.x=x;
+    this.y=y;
     this.houseButton.hide();
 	this.hotelButton.hide();
     this.oilButton.hide();
@@ -75,6 +87,8 @@ PopMenu.prototype.upgrade=function(x,y, parent){
     this.parent.building.pop=pop;
     this.parent.building.rpop=rpop;
     this.upgradeButton.addListener(clkUpgButton, this.parent);
+
+    
 }
 PopMenu.prototype.hide=function(){
     this.parent=null;
@@ -88,6 +102,8 @@ function clkHouseButton(){
         money-=500;
         Tpopulation+=10;
         this.build("house");
+    }else{
+        popMenu.popUpText("insufficient funds");
     }
 };
 function clkHotelButton(){
@@ -95,10 +111,16 @@ function clkHotelButton(){
         money-=1500;
         Tpopulation+=10;
         this.build("hotel");
-    } 
+    }else{
+        popMenu.popUpText("insufficient funds");
+    }
 };
 function clkOilButton(){
-    if(money>=2000&&Tpopulation>=population+40){
+    if(money<2000){
+        popMenu.popUpText("insufficient funds");
+    }else if(Tpopulation<population+40){
+        popMenu.popUpText("insufficient Population");
+    }else{
         population+=40;
         money-=2000;
         this.build("oil");
@@ -111,4 +133,19 @@ function clkUpgButton(){
         money-=this.building.price;
         this.upgrade();
     }
+};
+
+PopMenu.prototype.popUpText=function(t){
+    game.world.bringToTop(this.popText);
+    this.popText.text = t;
+    this.popText.tween = game.add.tween(this.popText).to({
+        alpha: 0,
+        y: game.camera.y+300,
+        x: game.camera.x+1000
+    }, 2500, Phaser.Easing.Cubic.Out);
+    this.popText.reset(game.camera.x+1000, game.camera.y+400);
+    this.popText.alpha = 1;
+    this.popText.tween.start();
+    console.log("a");
+    
 };

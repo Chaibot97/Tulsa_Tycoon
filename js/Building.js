@@ -36,10 +36,6 @@ let Building = function(X,Y,type,lv=0){
             y: this.sprite.centerY-250,
             x: this.sprite.centerX+100
         }, 1200, Phaser.Easing.Cubic.Out);
-
-        this.popText.tween.onComplete.add(function(text, tween) {
-        text.kill();
-    });
 };
 
 Building.prototype.yieldMoney=function(){
