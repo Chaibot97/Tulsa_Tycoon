@@ -26,11 +26,12 @@ HUD.prototype.updateTime=function(){
     }
 	if(this.month == 1){
 		//load up the next dialogue scene
-		// loadDialogue(this.year);
+		loadDialogue(this.year);
 	}
 }
 HUD.prototype.updateHud=function(money,population,Tpopulation){
     game.world.bringToTop(this.pop_sprite);
+	game.world.bringToTop(this.money_sprite);
     game.world.bringToTop(this.moneyInfo);
     game.world.bringToTop(this.timeInfo);
     this.moneyInfo.text= String(money) + "\n" + String(Tpopulation-population)+"/"+String(Tpopulation);

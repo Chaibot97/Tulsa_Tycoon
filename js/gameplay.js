@@ -14,10 +14,12 @@ let popMenu;
 let map;
 
 //DIALOGUE!!!
-let dialogueRecords = Array();
 let dialogueOptions = Array();
 
+let bigDialogue;
+
 let semiTransparent;
+let npc;
 //YAY!!!
 
 let hud;
@@ -65,6 +67,8 @@ gameplayState.prototype.create = function(){
     lvUp1FX=game.add.audio('levelup1_audio');
     lvUp2FX=game.add.audio('levelup2_audio');
 
+	
+	firstDialogue();
     dialogueFX=game.add.audio('dialogue_audio')
     dialogueBadFX=game.add.audio('dialogue_bad_audio')
     dialogueGoodFX=game.add.audio('dialogue_good_audio')
@@ -74,46 +78,6 @@ gameplayState.prototype.create = function(){
     BGM.play();
 	//game.time.events.add(Phaser.Timer.SECOND * 7, firstDialogue, this);
 };
-
-function firstDialogue(){
-	
-	//ZA WARUDO! TOKI WO TOMARE!
-	pause = true;
-	
-	//stop the buildings from interacting
-	stopInteracting();
-	
-	//semi-transparency!
-	semiTransparent = game.add.sprite(500, 500, 'semitransparent');
-	semiTransparent.anchor.set(0.5)
-	semiTransparent.scale.setTo(3000, 3000);
-	
-	//Dialogue!!!
-	dialogueRecords.push(new DialogueRecord('Hello. This is the first example dialogue', 'NPC'));
-	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
-	dialogueOptions.push(new DialogueChoice('nice', 'right'));
-
-}
-
-function secondDialogue(){
-	
-	//ZA WARUDO! TOKI WO TOMARE!
-	pause = true;
-	
-	//stop the buildings from interacting
-	stopInteracting();
-	
-	//semi-transparency!
-	semiTransparent = game.add.sprite(500, 500, 'semitransparent');
-	semiTransparent.anchor.set(0.5)
-	semiTransparent.scale.setTo(3000, 3000);
-	
-	//Dialogue!!!
-	dialogueRecords.push(new DialogueRecord('Hello. This is the second example dialogue', 'NPC'));
-	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
-	dialogueOptions.push(new DialogueChoice('nice', 'right'));
-
-}
 
 gameplayState.prototype.update = function(){
     
@@ -158,4 +122,145 @@ function continueInteracting(){
         if(e.building)
             e.building.sprite.inputEnabled = true;
     })
+}
+
+function loadDialogue(year){
+	switch(year){
+		case 1899:
+			secondDialogue();
+			break;
+		case 1900:
+			thirdDialogue();
+			break;
+		case 1901:
+			fourthDialogue();
+			break;
+		case 1902:
+			fifthDialogue();
+			break;
+		case 1903:
+			sixthDialogue();
+			break;
+		case 1904:
+			seventhDialogue();
+			break;
+		case 1905:
+			eigthDialogue();
+			break;
+		case 1906:
+			ninthDialogue();
+			break;
+		case 1906:
+			tenthDialogue();
+			break;
+		case 1907:
+			eleventhDialogue();
+	}
+}
+function firstDialogue(){
+	//prepare the dialogue!
+	prepareDialogue('richMan');
+	
+	//Dialogue!!!
+	bigDialogue = new DialogueBig('Hello. This is the first example dialogue and oh man oh geez its arbitrarily large eyyyyyyy words words words');
+	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
+	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+}
+function secondDialogue(){
+	prepareDialogue('bellhop');
+	
+	//Dialogue!!!
+	bigDialogue = new DialogueBig('Hello. This is the second example dialogue', 'NPC');
+	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
+	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+}
+function thirdDialogue(){
+	prepareDialogue('bellhop');
+	
+	//Dialogue!!!
+	bigDialogue = new DialogueBig('Hello. This is the second example dialogue', 'NPC');
+	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
+	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+}
+function fourthDialogue(){
+	prepareDialogue('bellhop');
+	
+	//Dialogue!!!
+	bigDialogue = new DialogueBig('Hello. This is the second example dialogue', 'NPC');
+	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
+	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+}
+function fifthDialogue(){
+	prepareDialogue('bellhop');
+	
+	//Dialogue!!!
+	bigDialogue = new DialogueBig('Hello. This is the second example dialogue', 'NPC');
+	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
+	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+}
+function sixthDialogue(){
+	prepareDialogue('bellhop');
+	
+	//Dialogue!!!
+	bigDialogue = new DialogueBig('Hello. This is the second example dialogue', 'NPC');
+	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
+	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+}
+function seventhDialogue(){
+	prepareDialogue('bellhop');
+	
+	//Dialogue!!!
+	bigDialogue = new DialogueBig('Hello. This is the second example dialogue', 'NPC');
+	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
+	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+}
+function eigthDialogue(){
+	prepareDialogue('bellhop');
+	
+	//Dialogue!!!
+	bigDialogue = new DialogueBig('Hello. This is the second example dialogue', 'NPC');
+	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
+	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+}
+function ninthDialogue(){
+	prepareDialogue('bellhop');
+	
+	//Dialogue!!!
+	bigDialogue = new DialogueBig('Hello. This is the second example dialogue', 'NPC');
+	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
+	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+}
+function tenthDialogue(){
+	prepareDialogue('bellhop');
+	
+	//Dialogue!!!
+	bigDialogue = new DialogueBig('Hello. This is the second example dialogue', 'NPC');
+	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
+	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+}
+function eleventhDialogue(){
+	prepareDialogue('bellhop');
+	
+	//Dialogue!!!
+	bigDialogue = new DialogueBig('Hello. This is the second example dialogue', 'NPC');
+	dialogueOptions.push(new DialogueChoice('despa-neato', 'left'));
+	dialogueOptions.push(new DialogueChoice('nice', 'right'));
+}
+function prepareDialogue(character){
+	//ZA WARUDO! TOKI WO TOMARE!
+	pause = true;
+	
+	//stop the buildings from interacting
+	stopInteracting();
+	
+	//semi-transparency!
+	semiTransparent = game.add.sprite(500, 500, 'semitransparent');
+	semiTransparent.anchor.set(0.5)
+	semiTransparent.scale.setTo(3000, 3000);
+	
+	//sprite of the guy what's doin the talkin!
+	npc = game.add.sprite(500, 500, character);
+	npc.scale.setTo(0.7, 0.7);
+	npc.anchor.set(0.5);
+	npc.fixedToCamera = true;
 }
