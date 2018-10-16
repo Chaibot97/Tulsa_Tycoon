@@ -98,7 +98,7 @@ function secondDialogue(){
 
 gameplayState.prototype.update = function(){
     
-    if (this.game.input.activePointer.isDown) {
+    if (this.game.input.activePointer.isDown && !pause) {
         if (this.game.origDragPoint) {		// move the camera by the amount the mouse has moved since last update
             game.camera.x += this.game.origDragPoint.x - this.game.input.activePointer.position.x;
             game.camera.y += this.game.origDragPoint.y - this.game.input.activePointer.position.y;
@@ -131,12 +131,12 @@ function sumYields(){
 function stopInteracting(){
 	buildings.forEach(function(e) {
         if(e.building)
-            e.building.inputEnabled = false;
+            e.building.sprite.inputEnabled = false;
     })
 }
 function continueInteracting(){
 	buildings.forEach(function(e) {
         if(e.building)
-            e.building.inputEnabled = true;
+            e.building.sprite.inputEnabled = true;
     })
 }
