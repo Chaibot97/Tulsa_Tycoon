@@ -54,7 +54,7 @@ let DialogueChoice = function(State, myPosition){
 						new DialogueDone();
 						break;
 					case 'Well . . . I suppose I could use some pointers. (tutorial)':
-						bigDialogue = new DialogueBig('Well, then, you\'ve come to the right man! I just so happen to know everything there is to know about building a city from nothing. Here\'s what you need to know to get started. In order to have a city, you need people! And people can\'t stay anywhere for very long without a roof over their heads, so you\'ll need some houses to hold them. Hotels bring in outsiders and some cash to boot! With all these citizens, you can start rakin\' in the dough, and put those people to work. This land is rich with oil, so that\'s going to be your most profitable investment. If anybody asks you for help or advice, it might do you good to hear them out. People round these parts tend to give back in a big way. That\'s about all there is to it! I’m on my way back to Oklahoma City, but I\'ll be back in 10 years or so to see how you\'re doing, so try not to muck anything up! Best of luck!');
+						bigDialogue = new DialogueBig('Well, then, you\'ve come to the right man! I just so happen to know everything there is to know about building a city from nothing. Here\'s what you need to know to get started. In order to have a city, you need people! And people can\'t stay anywhere for very long without a roof over their heads, so you\'ll need some houses to hold them. Hotels bring in outsiders and some cash to boot! With all these citizens, you can start rakin\' in the dough, and put those people to work. This land is rich with oil, so that\'s going to be your most profitable investment. If anybody asks you for help or advice, it might do you good to hear them out. People round these parts tend to give back in a big way. That\'s about all there is to it! I’m on my way back to Oklahoma City, but I\'ll be back in 10 years or so to see how you\'re doing, so try not to muck anything up! If you\'ve not made a name for yourself by January of 1908, I\'ll have to sell this land to somebody that can handle it! Best of luck!');
 						new DialogueDone();
 						break;
 					case 'No, really, that\'s someone else (quit game)':
@@ -271,8 +271,8 @@ let DialogueChoice = function(State, myPosition){
 						dialogueOptions.push(new DialogueChoice('Good for you, man! Now give me my money.', 'right'));
 						break;
 					case 'Good for you, man!':
-						money+=3000;
-						dialogueEffect = new Effect('+3000 BradyBucks');
+						money+=10000;
+						dialogueEffect = new Effect('+10000 BradyBucks');
 						new DialogueDone();
 						break;
 					case 'Good for you, man! Now give me my money.':
@@ -415,10 +415,12 @@ let DialogueChoice = function(State, myPosition){
 				switch(this.state){
 					case 'This place is the worst and I want to go home.':
 						bigDialogue = new DialogueBig('Ain\'t this place your home now? Anyway, let\'s see what kinda profit you done did brought in.');
+						dialogueEffect = new Effect('You have ' + money + 'BradyBucks!!!\nBuy yourself something nice!');
 						new DialogueDone();
 						break;
 					case 'I made a lot of money and would like to receive praise for it now.':
 						bigDialogue = new DialogueBig('Slow down there, buckaroo. Lemme tally up your total.');
+						dialogueEffect = new Effect('You have ' + money + 'BradyBucks!!!\nBuy yourself something nice!');
 						new DialogueDone();
 				}
 			

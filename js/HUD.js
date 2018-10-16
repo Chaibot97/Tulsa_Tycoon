@@ -3,7 +3,6 @@ let HUD=function() {
     this.year = 1898;
     this.month = 0;
     this.months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    this.fakeText = game.add.text(2090,15, '               \n               ', { font: "64px Baskerville", alpha: 20, fill: '#ffffff', strokeThickness: 9, stroke: '6f330c', backgroundColor: '#c0945550' });
     this.moneyInfo = game.add.text(2200, 15, '0', { font: "64px Baskerville", fill: '#ffffff', strokeThickness: 9, align: 'center'});
     this.timeInfo = game.add.text(1000, 15, '0', { font: "96px Bodoni 72 Oldstyle", fill: '#e2c188', strokeThickness: 9, stroke: '#6f330c', boundsAlignH: "right", boundsAlignV: 'middle' });
     this.moneyInfo.fixedToCamera = true;
@@ -26,7 +25,7 @@ HUD.prototype.updateTime=function(){
     }
 	if(this.month == 1){
 		//load up the next dialogue scene
-		loadDialogue(this.year);
+		//loadDialogue(this.year);
 	}
 }
 HUD.prototype.updateHud=function(money,population,Tpopulation){
