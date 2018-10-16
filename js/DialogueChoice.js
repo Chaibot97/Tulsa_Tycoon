@@ -50,7 +50,7 @@ let DialogueChoice = function(State, myPosition){
 					case 'Nope, I\'m a bonafide expert! (skip tutorial)':
 						bigDialogue = new DialogueBig('Splendid! In that case I\'ll get back to Oklahoma City and let you get on your way! I\'ll be checking back in about 10 years to see how you\'re doing, so try not to muck it up too badly.');
 						bigDialogue.text.addFontStyle('oblique', 114);
-						bigDialogue.text.addFontStyle('normal', 120);
+						bigDialogue.text.addFontStyle('normal', 123);
 						new DialogueDone();
 						break;
 					case 'Well . . . I suppose I could use some pointers. (tutorial)':
@@ -272,11 +272,13 @@ let DialogueChoice = function(State, myPosition){
 						break;
 					case 'Good for you, man!':
 						money+=10000;
+						netWorth+=10000;
 						dialogueEffect = new Effect('+10000 BradyBucks');
 						new DialogueDone();
 						break;
 					case 'Good for you, man! Now give me my money.':
 						money+=3000;
+						netWorth+=3000;
 						dialogueEffect = new Effect('+3000 BradyBucks');
 						new DialogueDone();
 				}
@@ -406,6 +408,7 @@ let DialogueChoice = function(State, myPosition){
 						break;
 					case 'Money talks far better than you do, friend. You\'ve got yourself a deal.':
 						money += 2000;
+						netWorth+=2000;
 						Tpopulation += 10;
 						dialogueEffect = new Effect('+2000 BradyBucks, +10 population');
 						new DialogueDone();
