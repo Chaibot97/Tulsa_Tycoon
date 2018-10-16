@@ -5,13 +5,13 @@ let DialogueChoice = function(State, myPosition){
 	let myAlign;
 	switch(myPosition){
 		case 'left':
-			X = 50;
-			Y = 1000;
+			X = 1100 - 500;
+			Y = 500 + 300;
 			myAlign = 'left';
 			break;
 		case 'right':
-			X = 1300;
-			Y = 1000;
+			X = 1100 + 500;
+			Y = 500 + 300;
 			myAlign = 'right';
 	}
 	
