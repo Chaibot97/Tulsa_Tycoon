@@ -1,7 +1,7 @@
 let DialogueDone = function(nextScene){
 	
-	let X = 500;
-	let Y = 1000;
+	let X = 1100;
+	let Y = 700;
 	let myAlign = 'center';
 	let State = 'Done'
 	

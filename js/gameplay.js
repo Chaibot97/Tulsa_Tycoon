@@ -23,7 +23,6 @@ let semiTransparent;
 let hud;
 let timer1;
 let timer2;
-
 let gameplayState = function(){
 };
 
@@ -52,7 +51,9 @@ gameplayState.prototype.create = function(){
 
 	popMenu=new PopMenu();
 
-	//game.time.events.add(Phaser.Timer.SECOND * 7, firstDialogue, this);
+    //c= new Clickable(500,500,"star");
+	
+	game.time.events.add(Phaser.Timer.SECOND * 7, firstDialogue, this);
 };
 
 function firstDialogue(){
@@ -97,7 +98,7 @@ function secondDialogue(){
 
 gameplayState.prototype.update = function(){
     
-    if (this.game.input.activePointer.isDown) {
+    if (this.game.input.activePointer.isDown && !pause) {
         if (this.game.origDragPoint) {		// move the camera by the amount the mouse has moved since last update
             game.camera.x += this.game.origDragPoint.x - this.game.input.activePointer.position.x;
             game.camera.y += this.game.origDragPoint.y - this.game.input.activePointer.position.y;
@@ -115,28 +116,27 @@ function counteTime(){
 	if (!pause)
 	{
 		time-=10;
-		hud.updateTime();
+		hud.updateTime(time);
 	}
 }
 
 function sumYields(){
     buildings.forEach(function(e) {
-        if(e.building)
+        if(e.building && !pause)
             e.building.yieldMoney();
     });
     hud.updateHud(money,population,Tpopulation);
-    
 }
 
 function stopInteracting(){
 	buildings.forEach(function(e) {
         if(e.building)
-            e.building.inputEnabled = false;
+            e.building.sprite.inputEnabled = false;
     })
 }
 function continueInteracting(){
 	buildings.forEach(function(e) {
         if(e.building)
-            e.building.inputEnabled = true;
+            e.building.sprite.inputEnabled = true;
     })
 }
