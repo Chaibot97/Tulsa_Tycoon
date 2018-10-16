@@ -12,8 +12,9 @@ BuildingSite.prototype.build=function(type){
     if(this.building.upgradable()){
         this.building.sprite.events.onInputDown.add(toggleUpgMenu, this);
     }
-    toggleMenu();
+    closeMenu();
     hud.updateHud(money,population,Tpopulation);
+    buildingFX.play();
 }
 BuildingSite.prototype.upgrade=function(){
     if(!this.building.upgradable())return;
@@ -22,30 +23,33 @@ BuildingSite.prototype.upgrade=function(){
     if(this.building.upgradable()){
         this.building.sprite.events.onInputDown.add(toggleUpgMenu, this);
     }
-    toggleMenu();
+    closeMenu();
     hud.updateHud(money,population,Tpopulation);
+    if(this.building.lv==1){
+        lvUp1FX.play();
+    }else{
+        lvUp2FX.play();
+    }
 }
 
 function toggleMenu () {
-    if(!popMenuUp){
+    closeMenu();
+   
+        clickFX.play();
         popMenu.show(this.x,this.y,this);
         map.inputEnabled = true;
-    }else{
-        popMenu.hide();
-        map.inputEnabled = false;
-    }
-    popMenuUp=!popMenuUp;
+
 }
 function toggleUpgMenu () {
-    if(!popMenuUp){
+    closeMenu();
+        clickFX.play();
         popMenu.lv = this.building.lv;
         popMenu.type = this.building.type;
         popMenu.upgrade(this.x,this.y,this);
         map.inputEnabled = true;
 
-    }else{
-        popMenu.hide();
-        map.inputEnabled = false;
-    }
-    popMenuUp=!popMenuUp;
+}
+function closeMenu(){
+    popMenu.hide();
+    map.inputEnabled = false;
 }

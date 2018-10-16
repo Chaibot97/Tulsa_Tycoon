@@ -14,12 +14,14 @@ pregameplayState.prototype.create = function(){
 	let startbutton = game.add.button(1670, 780, 'startbutton', play, this);
 	startbutton.width=500;
 	startbutton.height=180;
+
+	
 	
 };
 
 function play () {
-
-    game.state.start("Game");
+	game.state.start("Game");
+	game.add.audio('start_audio').play();
 
 }
 

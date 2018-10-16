@@ -35,6 +35,19 @@ preloadState.prototype.preload = function(){
 	game.load.image("money_icon", "assets/stax.png");
 	game.load.image("semitransparent", "assets/semitransparent.png");
 	game.load.image("pop_icon", "assets/shadow_pop_icon.png");
+
+	game.load.audio('start_audio', 'assets/audio/start.mp3');
+	game.load.audio('click_audio', 'assets/audio/click.mp3');
+	game.load.audio('alert_audio', 'assets/audio/alert.mp3');
+	game.load.audio('building_audio', 'assets/audio/new_building.mp3');
+	game.load.audio('levelup2_audio', 'assets/audio/final_levelup.mp3');
+	game.load.audio('levelup1_audio', 'assets/audio/first_levelup.mp3');
+	game.load.audio('dialogue_audio', 'assets/audio/dialogue.mp3');
+	game.load.audio('dialogue_bad_audio', 'assets/audio/dialogue_bad.mp3');
+	game.load.audio('dialogue_good_audio', 'assets/audio/dialogue_good.mp3');
+	game.load.audio('dialogue_bad_audio', 'assets/audio/dialogue_bad.mp3');
+	game.load.audio('main_audio', 'assets/audio/Tulsa-Tycoon.music.mp3');
+
 };
 
 preloadState.prototype.create = function(){
