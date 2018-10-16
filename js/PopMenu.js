@@ -127,7 +127,11 @@ function clkOilButton(){
     }
 };
 function clkUpgButton(){
-    if(money>=this.building.price&&Tpopulation>=population+this.building.rpop){
+    if(money<this.building.price){
+        popMenu.popUpText("insufficient funds");
+    }else if(Tpopulation<population+this.building.rpop){
+        popMenu.popUpText("insufficient Population");
+    }else{
         Tpopulation+=this.building.pop;
         population+=this.building.rpop;
         money-=this.building.price;
@@ -146,6 +150,5 @@ PopMenu.prototype.popUpText=function(t){
     this.popText.reset(game.camera.x+1000, game.camera.y+400);
     this.popText.alpha = 1;
     this.popText.tween.start();
-    console.log("a");
     
 };

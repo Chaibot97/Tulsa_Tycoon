@@ -1,6 +1,7 @@
 // gameplayState constructor
 let money = 2000;
 let population=0;
+let Tpopulation=0;
 let time=3000;
 let pause = false;
 let c;
@@ -46,7 +47,7 @@ gameplayState.prototype.create = function(){
     timer2.start();
     hud=new HUD();
     hud.updateTime(time);
-    hud.updateHud(money,population);
+    hud.updateHud(money,population,Tpopulation);
 
 	popMenu=new PopMenu();
 
@@ -124,7 +125,7 @@ function sumYields(){
         if(e.building)
             e.building.yieldMoney();
     });
-    hud.updateHud(money,population);
+    hud.updateHud(money,population,Tpopulation);
 }
 
 function stopInteracting(){

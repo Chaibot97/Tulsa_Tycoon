@@ -13,6 +13,7 @@ BuildingSite.prototype.build=function(type){
         this.building.sprite.events.onInputDown.add(toggleUpgMenu, this);
     }
     toggleMenu();
+    hud.updateHud(money,population,Tpopulation);
 }
 BuildingSite.prototype.upgrade=function(){
     if(!this.building.upgradable())return;
@@ -22,6 +23,7 @@ BuildingSite.prototype.upgrade=function(){
         this.building.sprite.events.onInputDown.add(toggleUpgMenu, this);
     }
     toggleMenu();
+    hud.updateHud(money,population,Tpopulation);
 }
 
 function toggleMenu () {
