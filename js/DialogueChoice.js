@@ -48,7 +48,9 @@ let DialogueChoice = function(State, myPosition){
 						dialogueOptions.push(new DialogueChoice('No, really, that\’s someone else. (quit game)', 'right'));
 						break;
 					case 'Nope, I\'m a bonafide expert! (skip tutorial)':
-						bigDialogue = new DialogueBig('Splendid! In that case I\'ll get back to Oklahoma City and let you get on your way! I\'ll be checking back in about 10 years to see how you\'re doing, so try not to muck it up too badly. If you\'ve not made a name for yourself by January of 1908, I\'ll have to sell this land to somebody that can handle it!');
+						bigDialogue = new DialogueBig('Splendid! In that case I\'ll get back to Oklahoma City and let you get on your way! I\'ll be checking back in about 10 years to see how you\'re doing, so try not to muck it up too badly.');
+						bigDialogue.text.addFontStyle('oblique', 114);
+						bigDialogue.text.addFontStyle('normal', 120);
 						new DialogueDone();
 						break;
 					case 'Well . . . I suppose I could use some pointers. (tutorial)':
