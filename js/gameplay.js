@@ -46,12 +46,14 @@ gameplayState.prototype.create = function(){
     timer1.start();
     timer2.start();
     hud=new HUD();
-    hud.updateTime(time);
+    hud.updateTime();
     hud.updateHud(money,population,Tpopulation);
 
 	popMenu=new PopMenu();
 
     //c= new Clickable(500,500,"star");
+	
+	//game.time.events.add(Phaser.Timer.SECOND * 7, firstDialogue, this);
 };
 
 function firstDialogue(){
@@ -137,38 +139,4 @@ function continueInteracting(){
         if(e.building)
             e.building.sprite.inputEnabled = true;
     })
-}
-
-function loadDialogue(year){
-	switch(year){
-		case 1899:
-			secondDialogue();
-			break;
-		case 1900:
-			thirdDialogue();
-			break;
-		case 1901:
-			fourthDialogue();
-			break;
-		case 1902:
-			fifthDialogue();
-			break;
-		case 1903:
-			sixthDialogue();
-			break;
-		case 1904:
-			seventhDialogue();
-			break;
-		case 1905:
-			eigthDialogue();
-			break;
-		case 1906:
-			ninthDialogue();
-			break;
-		case 1906:
-			tenthDialogue();
-			break;
-		case 1907:
-			eleventhDialogue();
-	}
 }
