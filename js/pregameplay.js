@@ -9,7 +9,7 @@ pregameplayState.prototype.create = function(){
 	title.height= 1125;
 	let titleHouses = game.add.sprite(1686, 84, 'titlehouse');
     titleHouses.animations.add('buildhouse');
-    titleHouses.animations.play('buildhouse', 6, true);
+    titleHouses.animations.play('buildhouse', 3, true);
 	// let title = game.add.text(650, 200,"Tulsa Tycon", { fill: '#ffffff',fontSize:100 });
 	let startbutton = game.add.button(1670, 780, 'startbutton', play, this);
 	startbutton.width=500;
