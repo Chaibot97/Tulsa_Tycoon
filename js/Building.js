@@ -1,8 +1,5 @@
 let Building = function(X,Y,type,lv=0){
     this.yield=0;
-    this.price=0;
-    this.pop=0;
-    this.rpop=0;
     if(type=="hotel"){
         X-=150;
         Y-=140;
@@ -36,10 +33,6 @@ let Building = function(X,Y,type,lv=0){
             y: this.sprite.centerY-250,
             x: this.sprite.centerX+100
         }, 1200, Phaser.Easing.Cubic.Out);
-
-        this.popText.tween.onComplete.add(function(text, tween) {
-        text.kill();
-    });
 };
 
 Building.prototype.yieldMoney=function(){

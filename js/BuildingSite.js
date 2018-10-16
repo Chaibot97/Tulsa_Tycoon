@@ -12,8 +12,8 @@ BuildingSite.prototype.build=function(type){
     if(this.building.upgradable()){
         this.building.sprite.events.onInputDown.add(toggleUpgMenu, this);
     }
-    hud.updateHud(money,population,Tpopulation);
     toggleMenu();
+    hud.updateHud(money,population,Tpopulation);
 }
 BuildingSite.prototype.upgrade=function(){
     if(!this.building.upgradable())return;
@@ -22,8 +22,8 @@ BuildingSite.prototype.upgrade=function(){
     if(this.building.upgradable()){
         this.building.sprite.events.onInputDown.add(toggleUpgMenu, this);
     }
-    hud.updateHud(money,population,Tpopulation);
     toggleMenu();
+    hud.updateHud(money,population,Tpopulation);
 }
 
 function toggleMenu () {

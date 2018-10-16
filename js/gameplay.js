@@ -23,7 +23,6 @@ let semiTransparent;
 let hud;
 let timer1;
 let timer2;
-
 let gameplayState = function(){
 };
 
@@ -52,6 +51,8 @@ gameplayState.prototype.create = function(){
 
 	popMenu=new PopMenu();
 
+    //c= new Clickable(500,500,"star");
+	
 	game.time.events.add(Phaser.Timer.SECOND * 7, firstDialogue, this);
 };
 
@@ -125,7 +126,6 @@ function sumYields(){
             e.building.yieldMoney();
     });
     hud.updateHud(money,population,Tpopulation);
-    
 }
 
 function stopInteracting(){
