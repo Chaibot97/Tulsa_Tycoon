@@ -1,8 +1,5 @@
 let Building = function(X,Y,type,lv=0){
     this.yield=0;
-    this.price=0;
-    this.pop=0;
-    this.rpop=0;
     if(type=="hotel"){
         X-=150;
         Y-=140;
@@ -25,7 +22,7 @@ let Building = function(X,Y,type,lv=0){
     this.lv=lv;
     
     this.popText = game.add.text(0, 0, '0', {
-        font: '64px Baskerville',
+        font: '48px Arial Black',
         fill: '#fff',
         strokeThickness: 20
     });

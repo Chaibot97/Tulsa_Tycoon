@@ -1,7 +1,6 @@
 // gameplayState constructor
 let money = 2000;
 let population=0;
-let Tpopulation=0;
 let time=3000;
 let pause = false;
 let c;
@@ -23,7 +22,6 @@ let semiTransparent;
 let hud;
 let timer1;
 let timer2;
-
 let gameplayState = function(){
 };
 
@@ -48,11 +46,13 @@ gameplayState.prototype.create = function(){
     timer2.start();
     hud=new HUD();
     hud.updateTime(time);
-    hud.updateHud(money,population,Tpopulation);
+    hud.updateHud(money,population);
 
 	popMenu=new PopMenu();
 
-	//game.time.events.add(Phaser.Timer.SECOND * 7, firstDialogue, this);
+    //c= new Clickable(500,500,"star");
+	
+	game.time.events.add(Phaser.Timer.SECOND * 7, firstDialogue, this);
 };
 
 function firstDialogue(){
@@ -115,7 +115,7 @@ function counteTime(){
 	if (!pause)
 	{
 		time-=10;
-		hud.updateTime();
+		hud.updateTime(time);
 	}
 }
 
@@ -124,8 +124,7 @@ function sumYields(){
         if(e.building)
             e.building.yieldMoney();
     });
-    hud.updateHud(money,population,Tpopulation);
-    
+    hud.updateHud(money,population);
 }
 
 function stopInteracting(){
