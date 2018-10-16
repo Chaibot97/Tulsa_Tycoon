@@ -1,5 +1,6 @@
 // gameplayState constructor
 let money = 2000;
+let netWorth=2000;
 let population=0;
 let Tpopulation=0;
 let time=3000;

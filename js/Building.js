@@ -44,6 +44,7 @@ Building.prototype.yieldMoney=function(){
         this.popText.tween.start();
     }
     money+=this.yield;
+    netWorth+=this.yield;
 };
 Building.prototype.upgradable=function(){
     return this.lv>0 && this.lv<3;
