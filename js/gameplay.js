@@ -122,7 +122,7 @@ function counteTime(){
 
 function sumYields(){
     buildings.forEach(function(e) {
-        if(e.building)
+        if(e.building && !pause)
             e.building.yieldMoney();
     });
     hud.updateHud(money,population,Tpopulation);
