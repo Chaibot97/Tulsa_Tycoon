@@ -46,7 +46,8 @@ preloadState.prototype.preload = function(){
 	game.load.audio('dialogue_bad_audio', 'assets/audio/dialogue_bad.mp3');
 	game.load.audio('dialogue_good_audio', 'assets/audio/dialogue_good.mp3');
 	game.load.audio('dialogue_bad_audio', 'assets/audio/dialogue_bad.mp3');
-	game.load.audio('main_audio', 'assets/audio/Tulsa-Tycoon.music.mp3');
+	game.load.audio('main_audio', 'assets/audio/Tulsa_Tycoon_music.mp3');
+	game.load.audio('pre_audio', 'assets/audio/Tulsa_Tycoon_novocals.mp3');
 
 };
 

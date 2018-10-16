@@ -150,7 +150,7 @@ PopMenu.prototype.popUpText=function(t){
     }, 2500, Phaser.Easing.Cubic.Out);
     this.popText.reset(game.camera.x+1000, game.camera.y+400);
     this.popText.alpha = 1;
-    this.popText.tween.start();*/
+    this.popText.tween.start();
 
     let popText = game.add.text(0, 0, '0', {
         font: '55px Arial Black',

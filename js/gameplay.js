@@ -28,6 +28,9 @@ let alertFX;
 let buildingFX;
 let lvUp1FX;
 let lvUp2FX;
+let dialogueFX;
+let dialogueGoodFX;
+let dialogueBadFX;
 let BGM;
 let gameplayState = function(){
 };
@@ -61,6 +64,11 @@ gameplayState.prototype.create = function(){
     buildingFX=game.add.audio('building_audio');
     lvUp1FX=game.add.audio('levelup1_audio');
     lvUp2FX=game.add.audio('levelup2_audio');
+
+    dialogueFX=game.add.audio('dialogue_audio')
+    dialogueBadFX=game.add.audio('dialogue_bad_audio')
+    dialogueGoodFX=game.add.audio('dialogue_good_audio')
+
     BGM=game.add.audio("main_audio")
     BGM.loop=true;
     BGM.play();
