@@ -47,7 +47,7 @@ gameplayState.prototype.create = function(){
     timer1.start();
     timer2.start();
     hud=new HUD();
-    hud.updateTime(time);
+    hud.updateTime();
     hud.updateHud(money,population,Tpopulation);
 
 	popMenu=new PopMenu();
