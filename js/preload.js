@@ -34,6 +34,7 @@ preloadState.prototype.preload = function(){
 	game.load.image("bubble", "assets/DialogueBubble.png");
 	game.load.image("money_icon", "assets/stax.png");
 	game.load.image("semitransparent", "assets/semitransparent.png");
+	game.load.image("pop_icon", "assets/shadow_pop_icon.png");
 
 	game.load.audio('start_audio', 'assets/audio/start.mp3');
 	game.load.audio('click_audio', 'assets/audio/click.mp3');
