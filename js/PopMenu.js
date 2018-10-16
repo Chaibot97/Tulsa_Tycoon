@@ -91,6 +91,7 @@ PopMenu.prototype.upgrade=function(x,y, parent){
     
 }
 PopMenu.prototype.hide=function(){
+	if (pause) {return;}
     this.parent=null;
     this.houseButton.hide();
 	this.hotelButton.hide();
@@ -98,6 +99,7 @@ PopMenu.prototype.hide=function(){
     this.upgradeButton.hide();
 };
 function clkHouseButton(){
+	if (pause) {return;}
     if(money>=500){
         money-=500;
         Tpopulation+=10;
@@ -107,6 +109,7 @@ function clkHouseButton(){
     }
 };
 function clkHotelButton(){
+	if (pause) {return;}
     if(money>=1500){
         money-=1500;
         Tpopulation+=10;
@@ -116,6 +119,7 @@ function clkHotelButton(){
     }
 };
 function clkOilButton(){
+	if (pause) {return;}
     if(money<2000){
         popMenu.popUpText("insufficient funds");
     }else if(Tpopulation<population+40){
@@ -127,6 +131,7 @@ function clkOilButton(){
     }
 };
 function clkUpgButton(){
+	if (pause) {return;}
     if(money<this.building.price){
         popMenu.popUpText("insufficient funds");
     }else if(Tpopulation<population+this.building.rpop){
@@ -140,7 +145,8 @@ function clkUpgButton(){
 };
 
 PopMenu.prototype.popUpText=function(t){
-    /*game.world.bringToTop(this.popText);
+    alertFX.play();
+    game.world.bringToTop(this.popText);
     this.popText.text = t;
     this.popText.tween = game.add.tween(this.popText).to({
         alpha: 0,
@@ -149,7 +155,7 @@ PopMenu.prototype.popUpText=function(t){
     }, 2500, Phaser.Easing.Cubic.Out);
     this.popText.reset(game.camera.x+1000, game.camera.y+400);
     this.popText.alpha = 1;
-    this.popText.tween.start();*/
+    this.popText.tween.start();
 
     let popText = game.add.text(0, 0, '0', {
         font: '55px Arial Black',

@@ -38,7 +38,7 @@ let Building = function(X,Y,type,lv=0){
 Building.prototype.yieldMoney=function(){
     if(this.yield==0)return;
     if (this.popText) {
-        this.popText.text = this.yield;
+        this.popText.text = "+"+this.yield;
         this.popText.reset(this.sprite.centerX+100, this.sprite.centerY-150);
         this.popText.alpha = 1;
         this.popText.tween.start();

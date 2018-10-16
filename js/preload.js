@@ -34,7 +34,15 @@ preloadState.prototype.preload = function(){
 	game.load.image("bubble", "assets/DialogueBubble.png");
 	game.load.image("money_icon", "assets/stax.png");
 	game.load.image("semitransparent", "assets/semitransparent.png");
-	game.load.image("pop_icon", "assets/shadow_pop_icon.png");
+	
+	game.load.image("bellhop", "assets/bellhop.png");
+	game.load.image("farmer", "assets/farmer.png");
+	game.load.image("kkkMan", "assets/kkk_man.png");
+	game.load.image("oilWorker", "assets/oil_worker.png");
+	game.load.image("police", "assets/police.png");
+	game.load.image("popIcon", "assets/pop_icon.png");
+	game.load.image("richMan", "assets/rich_man.png");
+	game.load.image("shadowPopIcon", "assets/shadow_pop_icon.png");
 };
 
 preloadState.prototype.create = function(){

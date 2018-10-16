@@ -30,6 +30,7 @@ HUD.prototype.updateTime=function(){
 }
 HUD.prototype.updateHud=function(money,population,Tpopulation){
     game.world.bringToTop(this.pop_sprite);
+	game.world.bringToTop(this.money_sprite);
     game.world.bringToTop(this.moneyInfo);
     game.world.bringToTop(this.timeInfo);
     this.moneyInfo.text= String(money) + "\n" + String(Tpopulation-population)+"/"+String(Tpopulation);
