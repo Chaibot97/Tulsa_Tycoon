@@ -70,12 +70,12 @@ PopMenu.prototype.upgrade=function(x,y, parent){
             if(this.lv == 1){
                 this.upgradeButton.sprite=game.add.sprite(0,0,"upgradeOil2");
                 price=3000;
-                rpop=80;
+                rpop=20;
             }
             else if(this.lv == 2){
                 this.upgradeButton.sprite=game.add.sprite(0,0,"upgradeOil3");
                 price=4000;
-                rpop=120;
+                rpop=20;
             }
             break;
     }
@@ -122,10 +122,10 @@ function clkOilButton(){
 	if (pause) {return;}
     if(money<2000){
         popMenu.popUpText("insufficient funds");
-    }else if(Tpopulation<population+40){
+    }else if(Tpopulation<population+20){
         popMenu.popUpText("insufficient Population");
     }else{
-        population+=40;
+        population+=20;
         money-=2000;
         this.build("oil");
     }
