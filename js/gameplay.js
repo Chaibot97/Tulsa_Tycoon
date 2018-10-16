@@ -53,7 +53,7 @@ gameplayState.prototype.create = function(){
 
     //c= new Clickable(500,500,"star");
 	
-	game.time.events.add(Phaser.Timer.SECOND * 7, firstDialogue, this);
+	//game.time.events.add(Phaser.Timer.SECOND * 7, firstDialogue, this);
 };
 
 function firstDialogue(){

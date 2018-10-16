@@ -32,6 +32,7 @@ preloadState.prototype.preload = function(){
 	game.load.image("upgradeButton", "assets/houseButton.png");
 	game.load.image("background", "assets/grid.png");
 	game.load.image("bubble", "assets/DialogueBubble.png");
+	game.load.image("money_icon", "assets/stax.png");
 	game.load.image("semitransparent", "assets/semitransparent.png");
 	game.load.image("pop_icon", "assets/shadow_pop_icon.png");
 };
