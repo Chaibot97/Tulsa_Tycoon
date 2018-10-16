@@ -26,11 +26,6 @@ let DialogueDone = function(nextScene){
 		
 		}
 		
-		switch(nextScene){
-			case 'secondDialogue':
-				game.time.events.add(Phaser.Timer.SECOND * 7, secondDialogue, this);
-		}
-		
 		pause = false;
 		continueInteracting();
 		
