@@ -272,11 +272,13 @@ let DialogueChoice = function(State, myPosition){
 						break;
 					case 'Good for you, man!':
 						money+=10000;
+						netWorth+=10000;
 						dialogueEffect = new Effect('+10000 BradyBucks');
 						new DialogueDone();
 						break;
 					case 'Good for you, man! Now give me my money.':
 						money+=3000;
+						netWorth+=3000;
 						dialogueEffect = new Effect('+3000 BradyBucks');
 						new DialogueDone();
 				}
@@ -406,6 +408,7 @@ let DialogueChoice = function(State, myPosition){
 						break;
 					case 'Money talks far better than you do, friend. You\'ve got yourself a deal.':
 						money += 2000;
+						netWorth+=2000;
 						Tpopulation += 10;
 						dialogueEffect = new Effect('+2000 BradyBucks, +10 population');
 						new DialogueDone();
