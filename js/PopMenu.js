@@ -122,10 +122,10 @@ function clkOilButton(){
 	if (pause) {return;}
     if(money<2000){
         popMenu.popUpText("insufficient funds");
-    }else if(Tpopulation<population+40){
+    }else if(Tpopulation<population+20){
         popMenu.popUpText("insufficient Population");
     }else{
-        population+=40;
+        population+=20;
         money-=2000;
         this.build("oil");
     }
