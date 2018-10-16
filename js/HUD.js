@@ -30,7 +30,7 @@ HUD.prototype.updateTime=function(){
     }
 	if(this.month == 1){
 		//load up the next dialogue scene
-		loadDialogue(this.year);
+		// loadDialogue(this.year);
 	}
 }
 HUD.prototype.updateHud=function(money,population,Tpopulation){

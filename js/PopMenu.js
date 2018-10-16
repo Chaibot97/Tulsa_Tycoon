@@ -140,6 +140,7 @@ function clkUpgButton(){
 };
 
 PopMenu.prototype.popUpText=function(t){
+    alertFX.play();
     game.world.bringToTop(this.popText);
     this.popText.text = t;
     this.popText.tween = game.add.tween(this.popText).to({
