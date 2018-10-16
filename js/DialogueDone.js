@@ -1,7 +1,7 @@
-let DialogueDone = function(nextScene){
+let DialogueDone = function(){
 	
 	let X = 1100;
-	let Y = 700;
+	let Y = 1000;
 	let myAlign = 'center';
 	let State = 'Done'
 	
@@ -19,12 +19,11 @@ let DialogueDone = function(nextScene){
 			dialogueOptions[i].text.destroy();
 		
 		}
-		for (let i=0; i<dialogueRecords.length; i++){
 		
-			dialogueRecords[i].sprite.destroy();
-			dialogueRecords[i].text.destroy();
+		npc.destroy();
 		
-		}
+		bigDialogue.sprite.kill();
+		bigDialogue.text.kill();
 		
 		pause = false;
 		continueInteracting();

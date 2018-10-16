@@ -91,6 +91,7 @@ PopMenu.prototype.upgrade=function(x,y, parent){
     
 }
 PopMenu.prototype.hide=function(){
+	if (pause) {return;}
     this.parent=null;
     this.houseButton.hide();
 	this.hotelButton.hide();
@@ -98,6 +99,7 @@ PopMenu.prototype.hide=function(){
     this.upgradeButton.hide();
 };
 function clkHouseButton(){
+	if (pause) {return;}
     if(money>=500){
         money-=500;
         Tpopulation+=10;
@@ -107,6 +109,7 @@ function clkHouseButton(){
     }
 };
 function clkHotelButton(){
+	if (pause) {return;}
     if(money>=1500){
         money-=1500;
         Tpopulation+=10;
@@ -116,6 +119,7 @@ function clkHotelButton(){
     }
 };
 function clkOilButton(){
+	if (pause) {return;}
     if(money<2000){
         popMenu.popUpText("insufficient funds");
     }else if(Tpopulation<population+40){
@@ -127,6 +131,7 @@ function clkOilButton(){
     }
 };
 function clkUpgButton(){
+	if (pause) {return;}
     if(money<this.building.price){
         popMenu.popUpText("insufficient funds");
     }else if(Tpopulation<population+this.building.rpop){
